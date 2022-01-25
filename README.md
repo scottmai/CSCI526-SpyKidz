@@ -1,1 +1,4 @@
-# CSCI526-SpyKidz
+# By A Thread
+
+CSCI 526 game
+
