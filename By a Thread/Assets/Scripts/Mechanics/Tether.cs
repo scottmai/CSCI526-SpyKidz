@@ -4,6 +4,8 @@ public class Tether : MonoBehaviour
 {
     public Rigidbody2D bind;
 
+    public HingeJoint2D player2;
+
     public GameObject tetherPrefab;
 
     public int tethers = 6;
@@ -25,6 +27,9 @@ public class Tether : MonoBehaviour
             previousTether = tether.GetComponent<Rigidbody2D>();
         }
 
+        player2.connectedBody = previousTether;
+        SpriteRenderer sr = previousTether.GetComponent<SpriteRenderer>();
+        sr.enabled = false;
     }
 
 
