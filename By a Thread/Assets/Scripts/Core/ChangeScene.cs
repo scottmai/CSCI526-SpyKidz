@@ -18,6 +18,5 @@ public class ChangeScene : MonoBehaviour
         Debug.Log("GOT TO PLAYER");
         SceneManager.LoadScene(loadLevel);
       }
-
     }
 }
