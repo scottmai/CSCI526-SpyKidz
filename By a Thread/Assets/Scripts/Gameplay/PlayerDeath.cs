@@ -13,12 +13,14 @@ namespace Platformer.Gameplay
     public class PlayerDeath : Simulation.Event<PlayerDeath>
     {
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        
 
         public override void Execute()
         {
             var player = model.player;
             if (player.health.IsAlive)
             {
+                Debug.Log(player.name);
                 player.health.Die();
                 model.virtualCamera.m_Follow = null;
                 model.virtualCamera.m_LookAt = null;
@@ -31,6 +33,11 @@ namespace Platformer.Gameplay
                 player.animator.SetBool("dead", true);
                 Simulation.Schedule<PlayerSpawn>(2);
             }
+            
+
+            
+            
+            
         }
     }
 }

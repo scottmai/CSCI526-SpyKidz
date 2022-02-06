@@ -21,6 +21,13 @@ namespace Platformer.Model
         /// by the user.
         /// </summary>
         public PlayerController player;
+        
+        
+        /// <summary>
+        /// The main component which controls the player2 sprite, controlled 
+        /// by the user.
+        /// </summary>
+        public PlayerController player2;
 
         /// <summary>
         /// The spawn point in the scene.
