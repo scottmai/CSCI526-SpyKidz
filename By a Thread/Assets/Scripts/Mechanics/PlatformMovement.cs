@@ -25,7 +25,7 @@ public class PlatformMovement : MonoBehaviour
     {
         if (flag)
         {
-            if (platform.transform.position.x >= 17.0f)
+            if (platform.transform.position.x >= 15.0f)
             {
                 platform.transform.Translate(new Vector3(-movementSpeed * Time.deltaTime, 0, 0));
             }
