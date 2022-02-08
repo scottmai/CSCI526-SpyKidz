@@ -8,7 +8,7 @@ public class Tether : MonoBehaviour
 
     public GameObject tetherPrefab;
 
-    public int tethers = 6;
+    public int tethers = 10;
 
     void Start()
     {
