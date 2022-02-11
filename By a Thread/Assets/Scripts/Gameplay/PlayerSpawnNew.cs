@@ -1,6 +1,7 @@
 using Platformer.Core;
 using Platformer.Mechanics;
 using Platformer.Model;
+using UnityEngine;
 
 namespace Platformer.Gameplay
 {
@@ -15,17 +16,19 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
+            player.spriteRenderer.enabled = true;
             player.collider2d.enabled = true;
             player.controlEnabled = false;
             if (player.audioSource && player.respawnAudio)
                 player.audioSource.PlayOneShot(player.respawnAudio);
             player.health.Increment();
-            player.Teleport(model.spawnPoint.transform.position);
+            Debug.Log(player.spawnPoint.transform.position);
+            player.Teleport(player.spawnPoint.transform.position);
             player.jumpState = PlayerController.JumpState.Grounded;
             player.animator.SetBool("dead", false);
             model.virtualCamera.m_Follow = player.transform;
             model.virtualCamera.m_LookAt = player.transform;
-            Simulation.Schedule<EnablePlayerInputNew>(2f).player=player;
+            Simulation.Schedule<EnablePlayerInputNew>(0).player=player;
         }
     }
 }

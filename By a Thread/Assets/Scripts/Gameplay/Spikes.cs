@@ -11,7 +11,7 @@ public class Spikes : MonoBehaviour
         var p = collider.gameObject.GetComponent<PlayerController>();
         if (p != null)
         {
-            Schedule<PlayerDeathNew>().player = p;
+            Schedule<PlayerDeath>();
         }
 
     }
