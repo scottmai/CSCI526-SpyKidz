@@ -16,6 +16,7 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
+            player.spriteRenderer.enabled = true;
             player.collider2d.enabled = true;
             player.controlEnabled = false;
             if (player.audioSource && player.respawnAudio)
@@ -27,7 +28,7 @@ namespace Platformer.Gameplay
             player.animator.SetBool("dead", false);
             model.virtualCamera.m_Follow = player.transform;
             model.virtualCamera.m_LookAt = player.transform;
-            Simulation.Schedule<EnablePlayerInputNew>(2f).player=player;
+            Simulation.Schedule<EnablePlayerInputNew>(0).player=player;
         }
     }
 }
