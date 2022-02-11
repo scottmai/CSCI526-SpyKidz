@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Platformer.Core;
 using Platformer.Model;
 using UnityEngine;
+using Platformer.Mechanics;
+using static Platformer.Core.Simulation;
 
 namespace Platformer.Gameplay
 {
@@ -16,7 +18,12 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
-            var player = model.player;
+            KillPlayer(model.player);
+            KillPlayer(model.player2);
+        }
+
+        public void KillPlayer(PlayerController player)
+        {
             if (player.health.IsAlive)
             {
                 player.health.Die();
@@ -29,7 +36,7 @@ namespace Platformer.Gameplay
                     player.audioSource.PlayOneShot(player.ouchAudio);
                 player.animator.SetTrigger("hurt");
                 player.animator.SetBool("dead", true);
-                Simulation.Schedule<PlayerSpawn>(2);
+                Simulation.Schedule<PlayerSpawnNew>(2).player = player;
             }
         }
     }

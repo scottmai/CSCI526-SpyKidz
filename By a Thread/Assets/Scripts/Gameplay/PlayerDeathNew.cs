@@ -32,9 +32,6 @@ namespace Platformer.Gameplay
                 player.animator.SetBool("dead", true);
                 Simulation.Schedule<PlayerSpawnNew>(2).player = player;
             }
-
-
-
         }
     }
 }
