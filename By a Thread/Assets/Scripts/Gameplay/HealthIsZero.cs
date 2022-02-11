@@ -11,11 +11,12 @@ namespace Platformer.Gameplay
     /// <typeparam name="HealthIsZero"></typeparam>
     public class HealthIsZero : Simulation.Event<HealthIsZero>
     {
-        public Health health;
+
+        public PlayerController player;
 
         public override void Execute()
         {
-            Schedule<PlayerDeath>();
+            Schedule<PlayerDeathNew>().player = player;
         }
     }
 }
