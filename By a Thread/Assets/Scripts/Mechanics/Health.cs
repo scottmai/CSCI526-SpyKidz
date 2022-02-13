@@ -10,6 +10,9 @@ namespace Platformer.Mechanics
     /// </summary>
     public class Health : MonoBehaviour
     {
+
+        public PlayerController player;
+
         /// <summary>
         /// The maximum hit points for the entity.
         /// </summary>
@@ -39,7 +42,7 @@ namespace Platformer.Mechanics
             currentHP = Mathf.Clamp(currentHP - 1, 0, maxHP);
             if (currentHP == 0)
             {
-                var ev = Schedule<HealthIsZero>();
+                var ev = Schedule<HealthIsZero>().player = player;
                 ev.health = this;
             }
         }
