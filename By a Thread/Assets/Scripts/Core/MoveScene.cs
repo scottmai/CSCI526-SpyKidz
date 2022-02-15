@@ -8,8 +8,14 @@ public class MoveScene : MonoBehaviour
   [SerializeField] private string loadLevel; //visible in inspector
     void OnTriggerEnter2D(Collider2D other)
     {
-      if(other.CompareTag("Player")) {
-        SceneManager.LoadScene(loadLevel);
-      }
+
+        Scene scene = SceneManager.GetActiveScene();
+        if (other.CompareTag("Player")) {
+            print(scene.name);
+            if (scene.name == "Level 1") {
+                SceneManager.LoadScene("Level 2");
+            }
+            
+        }
     }
 }
