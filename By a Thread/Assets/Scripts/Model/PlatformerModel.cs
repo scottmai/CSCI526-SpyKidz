@@ -22,6 +22,7 @@ namespace Platformer.Model
         /// </summary>
         public PlayerController player;
         public PlayerController player2;
+        public string level= "1";
 
         /// <summary>
         /// The spawn point in the scene.
