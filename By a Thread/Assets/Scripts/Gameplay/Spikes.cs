@@ -37,7 +37,7 @@ public class Spikes : MonoBehaviour
                 { "Level", model.level},
                 { "Zone", this.name }
             };
-            Debug.Log(this.name);
+            
             Events.CustomData("PlayerDeath", parameters);
             Events.Flush();
             Schedule<PlayerDeath>();

@@ -34,7 +34,7 @@ public class MoveScene : MonoBehaviour
         {
           { "Level", model.level}
         };
-        Debug.Log(model.level);
+        
         Events.CustomData("LevelComplete", parameters);
         Events.Flush();
         SceneManager.LoadScene(loadLevel);

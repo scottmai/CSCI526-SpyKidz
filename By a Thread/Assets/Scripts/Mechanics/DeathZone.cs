@@ -41,7 +41,7 @@ namespace Platformer.Mechanics
                     { "Level", model.level},
                     { "Zone", this.name }
                 };
-                Debug.Log(this.name);
+                
                 Events.CustomData("PlayerDeath", parameters);
                 Events.Flush();
                 var ev = Schedule<PlayerEnteredDeathZone>();
