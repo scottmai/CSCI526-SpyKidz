@@ -41,4 +41,6 @@ namespace Platformer.Model
         public float jumpDeceleration = 0.5f;
 
     }
+
+
 }

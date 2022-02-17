@@ -5,6 +5,7 @@ using Platformer.Model;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 public class MoveScene : MonoBehaviour
@@ -26,6 +27,7 @@ public class MoveScene : MonoBehaviour
   
   void OnTriggerEnter2D(Collider2D other)
     {
+
       if(other.CompareTag("Player")) {
         
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
