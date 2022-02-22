@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class PlayerForceController : MonoBehaviour
 {
-    //public bool IsGrounded { get; private set; }
+    [SerializeField] private LayerMask platformLayerMask;
+
     //public JumpState jumpState = JumpState.Grounded;
     private bool stopJump = false;
     bool jump = false;
 
     Vector2 move;
+    float previousHorizontal = 0;
     public bool controlEnabled = true;
-    private Rigidbody2D rb;
+    private Rigidbody2D body;
+    private BoxCollider2D boxCollider2D;
 
-    public float maxSpeed = 7;
-    public float jumpTakeOffSpeed = 7;
+    public float maxSpeed = 0.8f;
+    public float jumpTakeOffSpeed = 0.3f;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -29,7 +33,7 @@ public class PlayerForceController : MonoBehaviour
             if (name == "Player1")
             {
                 move.x = Input.GetAxis("Horizontal");
-                if (Input.GetButtonDown("Jump"))
+                if (IsGrounded() && Input.GetButtonDown("Jump"))
                 {
                     jump = true;
                 }
@@ -40,12 +44,12 @@ public class PlayerForceController : MonoBehaviour
                 }
 
 
-                if (rb.velocity.y > jumpTakeOffSpeed)
+                if (body.velocity.y > jumpTakeOffSpeed)
                 {
                     stopJump = true;
                 }
 
-                if (rb.velocity.y < 0.1)
+                if (IsGrounded())
                 {
                     stopJump = false;
                 }
@@ -53,7 +57,7 @@ public class PlayerForceController : MonoBehaviour
             else
             {
                 move.x = Input.GetAxis("HorizontalAlternate");
-                if (Input.GetButtonDown("JumpAlternate"))
+                if (IsGrounded() && Input.GetButtonDown("JumpAlternate"))
                 {
                     jump = true;
                 }
@@ -64,12 +68,12 @@ public class PlayerForceController : MonoBehaviour
                 }
 
 
-                if (rb.velocity.y > jumpTakeOffSpeed)
+                if (body.velocity.y > jumpTakeOffSpeed)
                 {
                     stopJump = true;
                 }
 
-                if (rb.velocity.y < 0.1)
+                if (IsGrounded())
                 {
                     stopJump = false;
                 }
@@ -79,14 +83,38 @@ public class PlayerForceController : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        if (move.x * rb.velocity.x < maxSpeed)
+        if (move.x * body.velocity.x < maxSpeed)
         {
-            rb.AddForce(0.5f * move, ForceMode2D.Impulse);
+            // need to consider only velocity due to player movement forces
+            // if player is pulled that should affect this separately
+
+            float speedDiff = maxSpeed - Mathf.Abs(body.velocity.x);
+            float scaleFactor = 0.8f;
+            body.AddForce(scaleFactor * speedDiff * move, ForceMode2D.Impulse);
+        }
+
+        if (Mathf.Abs(move.x) - Mathf.Abs(previousHorizontal) < 0)
+        {
+            float speedDiff = -body.velocity.x;
+            float moveDiff = 1 - Mathf.Abs(move.x);
+            float scaleFactor = 2.5f;
+            body.AddForce(new Vector2(scaleFactor * speedDiff * moveDiff, 0), ForceMode2D.Impulse);
         }
     
         if (jump && !stopJump)
         {
-            rb.AddForce(transform.up, ForceMode2D.Impulse);
+            body.AddForce(24f * transform.up, ForceMode2D.Impulse);
+            jump = false;
         }
+
+        previousHorizontal = move.x;
+    }
+
+
+    private bool IsGrounded()
+    {
+        float extraHeight = 0.1f;
+        RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, extraHeight, platformLayerMask);
+        return raycastHit.collider != null;
     }
 }
