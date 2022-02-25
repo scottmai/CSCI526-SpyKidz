@@ -17,7 +17,6 @@ public class PlayerForceController : MonoBehaviour
     private BoxCollider2D boxCollider2D;
 
     public float maxSpeed = 0.8f;
-    public float jumpTakeOffSpeed = 0.3f;
 
     void Start()
     {
@@ -27,7 +26,6 @@ public class PlayerForceController : MonoBehaviour
 
     void Update()
     {
-
         if (controlEnabled)
         {
             if (name == "Player1")
@@ -41,12 +39,6 @@ public class PlayerForceController : MonoBehaviour
                 {
                     stopJump = true;
                     jump = false;
-                }
-
-
-                if (body.velocity.y > jumpTakeOffSpeed)
-                {
-                    stopJump = true;
                 }
 
                 if (IsGrounded())
@@ -67,12 +59,6 @@ public class PlayerForceController : MonoBehaviour
                     jump = false;
                 }
 
-
-                if (body.velocity.y > jumpTakeOffSpeed)
-                {
-                    stopJump = true;
-                }
-
                 if (IsGrounded())
                 {
                     stopJump = false;
@@ -89,21 +75,21 @@ public class PlayerForceController : MonoBehaviour
             // if player is pulled that should affect this separately
 
             float speedDiff = maxSpeed - Mathf.Abs(body.velocity.x);
-            float scaleFactor = 0.8f;
-            body.AddForce(scaleFactor * speedDiff * move, ForceMode2D.Impulse);
+            float scaleFactor = 2f * body.mass;
+            body.AddForce(scaleFactor * move, ForceMode2D.Impulse);
         }
 
-        if (Mathf.Abs(move.x) - Mathf.Abs(previousHorizontal) < 0)
-        {
-            float speedDiff = -body.velocity.x;
-            float moveDiff = 1 - Mathf.Abs(move.x);
-            float scaleFactor = 2.5f;
-            body.AddForce(new Vector2(scaleFactor * speedDiff * moveDiff, 0), ForceMode2D.Impulse);
-        }
-    
+        //if (Mathf.Abs(move.x) - Mathf.Abs(previousHorizontal) < 0)
+        //{
+        //    float speedDiff = -body.velocity.x;
+        //    float moveDiff = 1 - Mathf.Abs(move.x);
+        //    float scaleFactor = 0.05f * body.mass;
+        //    body.AddForce(new Vector2(scaleFactor * speedDiff * moveDiff, 0), ForceMode2D.Impulse);
+        //}
+
         if (jump && !stopJump)
         {
-            body.AddForce(24f * transform.up, ForceMode2D.Impulse);
+            body.AddForce(6f * body.mass * transform.up, ForceMode2D.Impulse);
             jump = false;
         }
 
@@ -113,7 +99,7 @@ public class PlayerForceController : MonoBehaviour
 
     private bool IsGrounded()
     {
-        float extraHeight = 0.1f;
+        float extraHeight = 0.2f;
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, extraHeight, platformLayerMask);
         return raycastHit.collider != null;
     }
