@@ -3213,6 +3213,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   controlEnabled: 1
+  health: 1
+  spawnPoint: {fileID: 421228357}
   maxSpeed: 0.8
 --- !u!50 &838423054 stripped
 Rigidbody2D:
@@ -3408,6 +3410,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   controlEnabled: 1
+  health: 1
+  spawnPoint: {fileID: 1081174290}
   maxSpeed: 0.8
 --- !u!4 &999188170 stripped
 Transform:
@@ -3942,8 +3946,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model:
     virtualCamera: {fileID: 1946717924}
-    player: {fileID: 0}
-    player2: {fileID: 0}
+    player: {fileID: 838423051}
+    player2: {fileID: 999188163}
     level: 1
     spawnPoint: {fileID: 421228357}
     jumpModifier: 0.9
