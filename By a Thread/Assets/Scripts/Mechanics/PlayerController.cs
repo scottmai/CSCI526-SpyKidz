@@ -14,6 +14,7 @@ namespace Platformer.Mechanics
     /// </summary>
     public class PlayerController : KinematicObject
     {
+        public Transform spawnPoint;
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
         public AudioClip ouchAudio;
@@ -36,7 +37,7 @@ namespace Platformer.Mechanics
 
         bool jump;
         Vector2 move;
-        SpriteRenderer spriteRenderer;
+        internal SpriteRenderer spriteRenderer;
         internal Animator animator;
         readonly PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
@@ -45,6 +46,7 @@ namespace Platformer.Mechanics
         void Awake()
         {
             health = GetComponent<Health>();
+            health.player = this;
             audioSource = GetComponent<AudioSource>();
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -55,13 +57,27 @@ namespace Platformer.Mechanics
         {
             if (controlEnabled)
             {
-                move.x = Input.GetAxis("Horizontal");
-                if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
-                    jumpState = JumpState.PrepareToJump;
-                else if (Input.GetButtonUp("Jump"))
+                if (name == "Player1")
                 {
-                    stopJump = true;
-                    Schedule<PlayerStopJump>().player = this;
+                    move.x = Input.GetAxis("Horizontal");
+                    if (jumpState == JumpState.Grounded && Input.GetButtonDown("Jump"))
+                        jumpState = JumpState.PrepareToJump;
+                    else if (Input.GetButtonUp("Jump"))
+                    {
+                        stopJump = true;
+                        Schedule<PlayerStopJump>().player = this;
+                    }
+                }
+                else
+                {
+                    move.x = Input.GetAxis("HorizontalAlternate");
+                    if (jumpState == JumpState.Grounded && Input.GetButtonDown("JumpAlternate"))
+                        jumpState = JumpState.PrepareToJump;
+                    else if (Input.GetButtonUp("JumpAlternate"))
+                    {
+                        stopJump = true;
+                        Schedule<PlayerStopJump>().player = this;
+                    }
                 }
             }
             else
