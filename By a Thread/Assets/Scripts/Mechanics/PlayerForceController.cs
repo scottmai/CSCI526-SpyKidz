@@ -16,6 +16,9 @@ public class PlayerForceController : MonoBehaviour
     private Rigidbody2D body;
     private BoxCollider2D boxCollider2D;
 
+    public int health = 1;
+    public Transform spawnPoint;
+
     public float maxSpeed = 0.8f;
 
     void Start()
@@ -102,5 +105,11 @@ public class PlayerForceController : MonoBehaviour
         float extraHeight = 0.2f;
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, extraHeight, platformLayerMask);
         return raycastHit.collider != null;
+    }
+
+    public void Teleport(Vector3 position)
+    {
+        body.position = position;
+        body.velocity *= 0;
     }
 }
