@@ -33,7 +33,7 @@ namespace Platformer.Mechanics
         void OnTriggerEnter2D(Collider2D collider)
         {
             PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-            var p = collider.gameObject.GetComponent<PlayerController>();
+            var p = collider.gameObject.GetComponent<PlayerForceController>();
             if (p != null)
             {
                 Dictionary<string, object> parameters = new Dictionary<string, object>()
