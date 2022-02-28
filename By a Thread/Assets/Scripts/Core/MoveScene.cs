@@ -36,7 +36,7 @@ public class MoveScene : MonoBehaviour
         Dictionary<string, object> parameters = new Dictionary<string, object>()
         {
           { "Level", model.level.ToString()},
-          { "DeathCount", model.DeathCount},
+          { "Attempts", model.DeathCount},
           {"TimeToComplete", model.T.timeStart}
         };
         
