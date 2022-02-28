@@ -3395,6 +3395,7 @@ GameObject:
   - component: {fileID: 1754240609}
   - component: {fileID: 1754240610}
   - component: {fileID: 1754240611}
+  - component: {fileID: 1754240612}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3418,6 +3419,8 @@ MonoBehaviour:
     virtualCamera: {fileID: 1946717924}
     player: {fileID: 838423048}
     player2: {fileID: 999188169}
+    level: 1
+    DeathCount: 0
     spawnPoint: {fileID: 421228357}
     jumpModifier: 0.9
     jumpDeceleration: 0
@@ -3560,6 +3563,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1754240612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754240606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57913f53f4d744069b6e14e945bd2ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStart: 0
+  timerActive: 1
 --- !u!1 &1946717923
 GameObject:
   m_ObjectHideFlags: 0

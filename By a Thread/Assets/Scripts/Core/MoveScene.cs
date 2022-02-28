@@ -31,10 +31,13 @@ public class MoveScene : MonoBehaviour
       if(other.CompareTag("Player")) {
         
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        model.T.timerActive = false;
         
         Dictionary<string, object> parameters = new Dictionary<string, object>()
         {
-          { "Level", model.level}
+          { "Level", model.level.ToString()},
+          { "DeathCount", model.DeathCount.ToString()},
+          {"TimeToComplete", model.T.timeStart.ToString()}
         };
         
         Events.CustomData("LevelComplete", parameters);
