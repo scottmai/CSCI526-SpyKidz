@@ -19,7 +19,7 @@ public class PlayerForceController : MonoBehaviour
     public int health = 1;
     public Transform spawnPoint;
 
-    public float maxSpeed = 0.8f;
+    public float maxSpeed = 5f;
 
     void Start()
     {
@@ -72,21 +72,34 @@ public class PlayerForceController : MonoBehaviour
 
     protected void FixedUpdate()
     {
-        if (move.x * body.velocity.x < maxSpeed)
-        {
-            // need to consider only velocity due to player movement forces
-            // if player is pulled that should affect this separately
+        // max velocity 5
+        // 0.1 per frame is a little slow
+        // 0.35 to 0.05
+        float scaleFactor = 0.12f;
+        body.AddForce(scaleFactor * move, ForceMode2D.Impulse);
 
-            float speedDiff = maxSpeed - Mathf.Abs(body.velocity.x);
-            float scaleFactor = 2f * body.mass;
-            body.AddForce(scaleFactor * move, ForceMode2D.Impulse);
-        }
+        //if (Mathf.Abs(body.velocity.x) < maxSpeed)
+        //{
+        //    float scaleFactor = 0.1f;
+        //    body.AddForce(scaleFactor * move, ForceMode2D.Impulse);
+        //}
+
+        //if ((posDirection && (body.velocity.x < velocityLimit))
+        //    || (!posDirection && (body.velocity.x > velocityLimit)))
+        //{
+        //    // need to consider only velocity due to player movement forces
+        //    // if player is pulled that should affect this separately
+
+        //    float speedDiff = velocityLimit - body.velocity.x;
+        //    float scaleFactor = 10f * body.mass;
+        //    body.AddForce(new Vector2(scaleFactor * speedDiff * Mathf.Abs(move.x), 0), ForceMode2D.Impulse);
+        //}
 
         //if (Mathf.Abs(move.x) - Mathf.Abs(previousHorizontal) < 0)
         //{
         //    float speedDiff = -body.velocity.x;
         //    float moveDiff = 1 - Mathf.Abs(move.x);
-        //    float scaleFactor = 0.05f * body.mass;
+        //    float scaleFactor = 0.5f * body.mass;
         //    body.AddForce(new Vector2(scaleFactor * speedDiff * moveDiff, 0), ForceMode2D.Impulse);
         //}
 
