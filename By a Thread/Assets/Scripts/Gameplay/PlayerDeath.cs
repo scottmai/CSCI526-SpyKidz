@@ -23,20 +23,17 @@ namespace Platformer.Gameplay
             
         }
 
-        public void KillPlayer(PlayerController player)
+        public void KillPlayer(PlayerForceController player)
         {
-
-
-            
-            if (player.health.IsAlive)
+            if (player.health > 0)
             {
-                player.health.Die();
+                player.health = 0;
                 // player.collider.enabled = false;
                 player.controlEnabled = false;
 
-                if (player.audioSource && player.ouchAudio)
-                    player.audioSource.PlayOneShot(player.ouchAudio);
-                player.spriteRenderer.enabled = false;
+                //if (player.audioSource && player.ouchAudio)
+                //    player.audioSource.PlayOneShot(player.ouchAudio);
+                //player.spriteRenderer.enabled = false;
                 Simulation.Schedule<PlayerSpawnNew>(.5f).player = player;
             }
         }
