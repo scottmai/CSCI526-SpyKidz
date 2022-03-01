@@ -20,11 +20,11 @@ namespace Platformer.Gameplay
         {
             KillPlayer(model.player2);
             KillPlayer(model.player);
+            
         }
 
         public void KillPlayer(PlayerForceController player)
         {
-            Debug.Log(player);
             if (player.health > 0)
             {
                 player.health = 0;

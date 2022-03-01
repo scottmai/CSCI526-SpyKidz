@@ -22,7 +22,9 @@ namespace Platformer.Model
         /// </summary>
         public PlayerForceController player;
         public PlayerForceController player2;
-        public string level= "1";
+        public int level= 1;
+        public int DeathCount = 0;
+        public Timer T;
 
         /// <summary>
         /// The spawn point in the scene.

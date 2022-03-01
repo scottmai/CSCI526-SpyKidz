@@ -16,6 +16,12 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
+            // idk why but having this code in playerDeath gives incorrect values
+            if (player == model.player) 
+            {
+                model.DeathCount += 1;
+            }
+            
             //player.spriteRenderer.enabled = true;
             //player.collider2d.enabled = true;
             player.controlEnabled = false;
