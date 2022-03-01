@@ -37,7 +37,7 @@ public class Launcher : MonoBehaviour
             float posY = transform.position.y;
 
             Vector2 launchDir = new Vector2(directionX - posX, directionY - posY);
-
+            print(launchDir);
             playerController.ExitLauncher(launchDir, launchForce);
 
         }

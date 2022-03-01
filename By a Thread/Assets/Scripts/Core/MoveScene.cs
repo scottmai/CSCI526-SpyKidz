@@ -12,10 +12,15 @@ public class MoveScene : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         if (other.CompareTag("Player")) {
             print(scene.name);
-            if (scene.name == "Level 1") {
+            if (scene.name == "Level 1" || scene.name == "SampleScene") {
                 SceneManager.LoadScene("Level 2");
             }
-            
+
+            if (scene.name == "Level 2")
+            {
+                SceneManager.LoadScene("Level 3");
+            }
+
         }
     }
 }

@@ -54,6 +54,7 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
+            body = GetComponent<Rigidbody2D>();
         }
 
         protected override void Update()
@@ -162,7 +163,12 @@ namespace Platformer.Mechanics
         {
             transform.parent = null;
             print("out");
-            body.AddForce(launchDir * launchForce);
+            velocity.x = (launchForce);
+
+            Schedule<PlayerJumped>().player = this;
+            jumpState = JumpState.InFlight;
+
+            base.Update();
         }
     }
 
