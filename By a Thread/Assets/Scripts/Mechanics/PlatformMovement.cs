@@ -6,8 +6,8 @@ public class PlatformMovement : MonoBehaviour
     private bool flag = false;
     Vector3 startPosition = Vector3.zero;
 
-    [SerializeField] float offsetLeft = -2, offsetRight = 2;
-    [SerializeField] bool hasReachedRight = true, hasReachedLeft = false;
+    private float offsetLeft = 3, offsetRight = 3;
+    private bool hasReachedRight = true, hasReachedLeft = false;
 
     void Awake() {
         startPosition = platform.transform.position;
@@ -38,6 +38,7 @@ public class PlatformMovement : MonoBehaviour
             /*
             print(hasReachedLeft);
             print(hasReachedRight);
+            print(startPosition.x);
             print(System.Math.Round(platform.transform.position.x, 2));
             print(System.Math.Round(startPosition.x - offsetLeft, 2));
             */
@@ -56,13 +57,13 @@ public class PlatformMovement : MonoBehaviour
             }
             if (System.Math.Round(platform.transform.position.x, 2) >= System.Math.Round(startPosition.x - offsetLeft, 2) && !hasReachedLeft)
              {
-                 // print("Left");
+                 print("Left");
                  platform.transform.Translate(new Vector3(-movementSpeed * Time.deltaTime, 0, 0));
              }
-
+                
             
             if (System.Math.Round(platform.transform.position.x, 2) <= System.Math.Round(startPosition.x, 2) && !hasReachedRight) {
-                // print("Right");
+                print("Right");
                 platform.transform.Translate(new Vector3(movementSpeed * Time.deltaTime, 0, 0));
 
              }
