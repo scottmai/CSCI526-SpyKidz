@@ -11,7 +11,7 @@ namespace Platformer.Gameplay
     {
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
-        public PlayerController player;
+        public PlayerForceController player;
 
         public override void Execute()
         {
