@@ -6,14 +6,15 @@ TagManager:
   tags:
   - TutorialRequirement
   - Slider
+  - Coin
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Players
   - Water
   - UI
-  - 
+  - Platforms
   - 
   - 
   - 

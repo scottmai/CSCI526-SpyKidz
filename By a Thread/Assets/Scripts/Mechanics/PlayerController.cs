@@ -54,7 +54,9 @@ namespace Platformer.Mechanics
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             animator = GetComponent<Animator>();
-            body = GetComponent<Rigidbody2D>();
+
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            rb.isKinematic = false;
         }
 
         protected override void Update()

@@ -12,23 +12,27 @@ namespace Platformer.Gameplay
     {
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
 
-        public PlayerController player;
+        public PlayerForceController player;
 
         public override void Execute()
         {
-            player.spriteRenderer.enabled = true;
-            player.collider2d.enabled = true;
+            // idk why but having this code in playerDeath gives incorrect values
+            if (player == model.player) 
+            {
+                model.DeathCount += 1;
+            }
+            
+            //player.spriteRenderer.enabled = true;
+            //player.collider2d.enabled = true;
             player.controlEnabled = false;
-            if (player.audioSource && player.respawnAudio)
-                player.audioSource.PlayOneShot(player.respawnAudio);
-            player.health.Increment();
-            Debug.Log(player.spawnPoint.transform.position);
+            //if (player.audioSource && player.respawnAudio)
+            //    player.audioSource.PlayOneShot(player.respawnAudio);
+            player.health += 1;
+            
             player.Teleport(player.spawnPoint.transform.position);
-            player.jumpState = PlayerController.JumpState.Grounded;
-            player.animator.SetBool("dead", false);
-            model.virtualCamera.m_Follow = player.transform;
-            model.virtualCamera.m_LookAt = player.transform;
-            Simulation.Schedule<EnablePlayerInputNew>(0).player=player;
+            //player.jumpState = PlayerController.JumpState.Grounded;
+            //player.animator.SetBool("dead", false);
+            Simulation.Schedule<EnablePlayerInputNew>(0).player = player;
         }
     }
 }

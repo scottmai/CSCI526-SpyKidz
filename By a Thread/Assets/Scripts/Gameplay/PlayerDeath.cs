@@ -18,23 +18,22 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
-            KillPlayer(model.player);
             KillPlayer(model.player2);
+            KillPlayer(model.player);
+            
         }
 
-        public void KillPlayer(PlayerController player)
+        public void KillPlayer(PlayerForceController player)
         {
-            if (player.health.IsAlive)
+            if (player.health > 0)
             {
-                player.health.Die();
-                model.virtualCamera.m_Follow = null;
-                model.virtualCamera.m_LookAt = null;
+                player.health = 0;
                 // player.collider.enabled = false;
                 player.controlEnabled = false;
 
-                if (player.audioSource && player.ouchAudio)
-                    player.audioSource.PlayOneShot(player.ouchAudio);
-                player.spriteRenderer.enabled = false;
+                //if (player.audioSource && player.ouchAudio)
+                //    player.audioSource.PlayOneShot(player.ouchAudio);
+                //player.spriteRenderer.enabled = false;
                 Simulation.Schedule<PlayerSpawnNew>(.5f).player = player;
             }
         }

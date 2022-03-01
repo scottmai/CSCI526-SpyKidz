@@ -429,7 +429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131901494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.91, y: -0.4, z: 0}
+  m_LocalPosition: {x: 37.14, y: -9.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -496,18 +496,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Id: 2cedde77-9eec-414f-a172-5c4b3c8e2891
---- !u!114 &219572416 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1794378822}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 219572407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709ee11994a2f44658e5fc9887c45081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &231495980
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,8 +1554,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model:
     virtualCamera: {fileID: 88157958}
-    player: {fileID: 219572416}
-    player2: {fileID: 981510403}
+    player: {fileID: 0}
+    player2: {fileID: 0}
+    level: 1
+    DeathCount: 0
+    T: {fileID: 0}
     spawnPoint: {fileID: 192468898}
     jumpModifier: 0.9
     jumpDeceleration: 0
@@ -1634,18 +1625,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Id: 28cb131e-2e50-489b-9123-69125dca508e
---- !u!114 &981510403 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1439816624}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 981510393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709ee11994a2f44658e5fc9887c45081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1065378693
 GameObject:
   m_ObjectHideFlags: 0
