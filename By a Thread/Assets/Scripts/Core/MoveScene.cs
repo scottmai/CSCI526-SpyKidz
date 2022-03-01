@@ -37,7 +37,7 @@ public class MoveScene : MonoBehaviour
         {
           { "Level", model.level.ToString()},
           { "Attempts", model.DeathCount},
-          {"TimeToComplete", model.T.timeStart}
+          {"Time", model.T.timeStart}
         };
         
         Events.CustomData("LevelComplete", parameters);
