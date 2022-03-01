@@ -38,7 +38,7 @@ namespace Platformer.Mechanics
             {
                 Dictionary<string, object> parameters = new Dictionary<string, object>()
                 {
-                    { "Level", model.level},
+                    { "Level", model.level.ToString()},
                     { "Zone", this.name }
                 };
                 

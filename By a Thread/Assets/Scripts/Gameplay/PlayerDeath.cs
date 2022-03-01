@@ -20,10 +20,14 @@ namespace Platformer.Gameplay
         {
             KillPlayer(model.player2);
             KillPlayer(model.player);
+            
         }
 
         public void KillPlayer(PlayerController player)
         {
+
+
+            
             if (player.health.IsAlive)
             {
                 player.health.Die();
