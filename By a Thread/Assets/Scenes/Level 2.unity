@@ -298,7 +298,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 3.5
+  orthographic size: 2.5382814
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -322,7 +322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153254494}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1868508, y: -0.47616866, z: -9}
+  m_LocalPosition: {x: -1.5699999, y: -0.48000005, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -616,7 +616,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611027999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1868508, y: -0.47616866, z: -9}
+  m_LocalPosition: {x: -1.5699999, y: -0.48000005, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 47609098}
@@ -1150,10 +1150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 1824666274}
-  offsetLeft: 5
-  offsetRight: 0
-  hasReachedRight: 0
-  hasReachedLeft: 0
 --- !u!61 &1406401149
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3326,8 +3322,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model:
     virtualCamera: {fileID: 611028001}
-    player: {fileID: 1824697710}
-    player2: {fileID: 1801468001}
+    player: {fileID: 0}
+    player2: {fileID: 0}
+    level: 1
+    DeathCount: 0
+    T: {fileID: 0}
     spawnPoint: {fileID: 366263990}
     jumpModifier: 0.9
     jumpDeceleration: 0
@@ -3451,18 +3450,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1801467999}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1801468001 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1801467999}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801468002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709ee11994a2f44658e5fc9887c45081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1801468002 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1208144871472054, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
@@ -3780,18 +3767,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1824697706}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1824697710 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114230831923080080, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1824697706}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824697709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 709ee11994a2f44658e5fc9887c45081, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1824697711
 MonoBehaviour:
   m_ObjectHideFlags: 2
