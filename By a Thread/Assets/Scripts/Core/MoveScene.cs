@@ -16,6 +16,7 @@ public class MoveScene : MonoBehaviour
   {
     try
     {
+
       await UnityServices.InitializeAsync();
       List<string> consentIdentifiers = await Events.CheckForRequiredConsents();
     }
