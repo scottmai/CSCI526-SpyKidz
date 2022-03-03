@@ -2865,6 +2865,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4979426701862869915, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4979426702232807261, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -2878,12 +2883,22 @@ PrefabInstance:
     - target: {fileID: 4979426702232807261, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -271.02747
+      value: -325.0275
       objectReference: {fileID: 0}
     - target: {fileID: 4979426702232807261, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 203.79019
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979426702408857611, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979426703847801967, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -270.8
       objectReference: {fileID: 0}
     - target: {fileID: 4979426703908445229, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
@@ -4184,6 +4199,7 @@ MonoBehaviour:
     level: 1
     DeathCount: 0
     T: {fileID: 1754240612}
+    TotalCoinsCollected: 0
     spawnPoint: {fileID: 421228357}
     jumpModifier: 0.9
     jumpDeceleration: 0
@@ -4850,7 +4866,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 376234219}
-  offsetLeft: -2
-  offsetRight: 2
-  hasReachedRight: 1
-  hasReachedLeft: 0
