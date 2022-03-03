@@ -2915,6 +2915,11 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4979426702408857611, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4979426703908445229, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
       propertyPath: m_RootOrder
