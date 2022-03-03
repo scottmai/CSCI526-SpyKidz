@@ -75,7 +75,7 @@ public class PlayerForceController : MonoBehaviour
         // max velocity 5
         // 0.1 per frame is a little slow
         // 0.35 to 0.05
-        float scaleFactor = 0.12f;
+        float scaleFactor = 0.4f;
         body.AddForce(scaleFactor * move, ForceMode2D.Impulse);
 
         //if (Mathf.Abs(body.velocity.x) < maxSpeed)
