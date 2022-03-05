@@ -964,7 +964,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376234219}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.16, y: -1.19, z: 0}
+  m_LocalPosition: {x: 12.59, y: -1.19, z: 0}
   m_LocalScale: {x: 1.7299854, y: 0.2711264, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1449,11 +1449,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-<<<<<<< Updated upstream
-  orthographic size: 2.881769
-=======
   orthographic size: 2.7162976
->>>>>>> Stashed changes
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2869,6 +2865,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4979426701862869915, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4979426702232807261, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -2882,12 +2883,22 @@ PrefabInstance:
     - target: {fileID: 4979426702232807261, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -271.02747
+      value: -325.0275
       objectReference: {fileID: 0}
     - target: {fileID: 4979426702232807261, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 203.79019
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979426702408857611, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979426703847801967, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -270.8
       objectReference: {fileID: 0}
     - target: {fileID: 4979426703908445229, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
@@ -3344,6 +3355,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textCoins: {fileID: 387870456}
+--- !u!231 &838423053
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838423049}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 999188168}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 1
+  m_Distance: 2.5370095
+  m_DampingRatio: 0
+  m_Frequency: 1
 --- !u!50 &838423054 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 50915408107096866, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
@@ -3554,6 +3585,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textCoins: {fileID: 387870456}
+--- !u!50 &999188168 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 50915408107096866, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
+    type: 3}
+  m_PrefabInstance: {fileID: 14859733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &999188170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4520396350849616, guid: 7d60c822c3f1b408ea7a00ecdb5e047a,
@@ -4162,6 +4199,7 @@ MonoBehaviour:
     level: 1
     DeathCount: 0
     T: {fileID: 1754240612}
+    TotalCoinsCollected: 0
     spawnPoint: {fileID: 421228357}
     jumpModifier: 0.9
     jumpDeceleration: 0
@@ -4783,7 +4821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115039843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.43, y: 0.56, z: 0}
+  m_LocalPosition: {x: 7.52, y: -3.52, z: 0}
   m_LocalScale: {x: 0.552808, y: 0.552808, z: 0.552808}
   m_Children: []
   m_Father: {fileID: 0}

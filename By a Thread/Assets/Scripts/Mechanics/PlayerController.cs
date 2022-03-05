@@ -43,6 +43,9 @@ namespace Platformer.Mechanics
 
         public Bounds Bounds => collider2d.bounds;
 
+        private Rigidbody2D body;
+
+
         void Awake()
         {
             health = GetComponent<Health>();
@@ -156,5 +159,20 @@ namespace Platformer.Mechanics
             InFlight,
             Landed
         }
+
+
+        public void ExitLauncher(Vector2 launchDir, float launchForce)
+        {
+            transform.parent = null;
+            print("out");
+            velocity.x = (launchForce);
+
+            Schedule<PlayerJumped>().player = this;
+            jumpState = JumpState.InFlight;
+
+            base.Update();
+        }
     }
-}
+
+    
+}   
