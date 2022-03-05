@@ -21,7 +21,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"/Users/cole/Desktop/webGLbuild;/Users/adam/Code/CS526/By-A-Thread/By a Thread/WebGL Builds;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"/Users/cole/Documents/USC/Spring2022/CSCI 526/webGLbuild;/Users/cole/Desktop/webGLbuild;/Users/adam/Code/CS526/By-A-Thread/By a Thread/WebGL Builds;;;;;;;\"}"
             }
         ]
     }
