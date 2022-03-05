@@ -3200,7 +3200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f07aa5679c43e9a7966b43cf86e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadLevel: 
+  loadLevel: Menu
 --- !u!61 &1022570027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3573,7 +3573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402f07aa5679c43e9a7966b43cf86e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loadLevel: 
+  loadLevel: Menu
 --- !u!61 &1110979149
 BoxCollider2D:
   m_ObjectHideFlags: 0
