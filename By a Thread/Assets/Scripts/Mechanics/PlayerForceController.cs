@@ -14,7 +14,7 @@ public class PlayerForceController : MonoBehaviour
     float previousHorizontal = 0;
     public bool controlEnabled = true;
     private Rigidbody2D body;
-    private CircleCollider2D circleCollider2D;
+    private CapsuleCollider2D capsuleCollider2D;
 
     public int health = 1;
     public Transform spawnPoint;
@@ -26,7 +26,7 @@ public class PlayerForceController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         Debug.Log("body");
         Debug.Log(body);
-        circleCollider2D = GetComponent<CircleCollider2D>();
+        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
 
     void Update()
@@ -118,7 +118,7 @@ public class PlayerForceController : MonoBehaviour
     private bool IsGrounded()
     {
         float extraHeight = 0.2f;
-        RaycastHit2D raycastHit = Physics2D.BoxCast(circleCollider2D.bounds.center, circleCollider2D.bounds.size, 0f, Vector2.down, extraHeight, platformLayerMask);
+        RaycastHit2D raycastHit = Physics2D.BoxCast(capsuleCollider2D.bounds.center, capsuleCollider2D.bounds.size, 0f, Vector2.down, extraHeight, platformLayerMask);
         return raycastHit.collider != null;
     }
 
