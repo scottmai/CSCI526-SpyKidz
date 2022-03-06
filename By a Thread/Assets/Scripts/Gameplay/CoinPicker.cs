@@ -14,9 +14,10 @@ public class CoinPicker : MonoBehaviour
     public TextMeshProUGUI textCoins;
 
     private void OnTriggerEnter2D(Collider2D other){
-        
+
         PlatformerModel model = Simulation.GetModel<PlatformerModel>();
-        
+        Debug.Log("TOUCHED COIN");
+
         if(other.transform.tag == "Coin")
         {
             model.TotalCoinsCollected += 1;

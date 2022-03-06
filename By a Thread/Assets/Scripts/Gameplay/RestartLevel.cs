@@ -15,6 +15,6 @@ public class RestartLevel : MonoBehaviour
      public void RestartGame() {
          // SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
          // Debug.Log("SceneManager.GetActiveScene().buildIndex"+ SceneManager.GetActiveScene().buildIndex);
-         SceneManager.LoadScene("SampleScene");
+         SceneManager.LoadScene("Level1");
      }
 }
