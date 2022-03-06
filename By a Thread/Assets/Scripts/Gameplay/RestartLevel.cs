@@ -9,12 +9,13 @@ public class RestartLevel : MonoBehaviour
   void Start()
     {
 
-        Button button = GetComponent<Button>();
-        Debug.Log("button" + button);
+        // Button button = GetComponent<Button>();
+        // Debug.Log("button" + button);
       }
      public void RestartGame() {
          // SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
          // Debug.Log("SceneManager.GetActiveScene().buildIndex"+ SceneManager.GetActiveScene().buildIndex);
-         SceneManager.LoadScene("SampleScene");
+         Scene scene = SceneManager. GetActiveScene();
+         SceneManager.LoadScene(scene.name);
      }
 }
