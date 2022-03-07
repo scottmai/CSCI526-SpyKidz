@@ -14,6 +14,13 @@ namespace Platformer.Gameplay
         public override void Execute()
         {
             var player = model.player;
+            
+            // idk why but having this code in playerDeath gives incorrect values
+            if (player == model.player) 
+            {
+                model.DeathCount += 1;
+            }
+            
             //player.collider2d.enabled = true;
             player.controlEnabled = false;
             //if (player.audioSource && player.respawnAudio)

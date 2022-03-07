@@ -21,7 +21,7 @@ public class CoinPicker : MonoBehaviour
         {
             model.TotalCoinsCollected += 1;
             coin ++;
-            textCoins.text = "X" + coin.ToString();
+            //textCoins.text = "X" + coin.ToString();
             Destroy(other.gameObject);
         }
     }
