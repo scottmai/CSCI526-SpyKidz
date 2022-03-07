@@ -43,26 +43,26 @@ public class PlatformMovement : MonoBehaviour
             print(System.Math.Round(startPosition.x - offsetLeft, 2));
             */
 
-            if (System.Math.Round(platform.transform.position.x, 2) == System.Math.Round(startPosition.x - offsetLeft, 2))
+            if (System.Math.Round(platform.transform.position.x, 2) <= System.Math.Round(startPosition.x - offsetLeft, 2))
             {
                 hasReachedLeft = true;
                 hasReachedRight = false;
 
             }
-            if (System.Math.Round(platform.transform.position.x, 2) == System.Math.Round(startPosition.x, 2))
+            if (System.Math.Round(platform.transform.position.x, 2) >= System.Math.Round(startPosition.x, 2))
             {
                 hasReachedLeft = false;
                 hasReachedRight = true; 
 
             }
-            if (System.Math.Round(platform.transform.position.x, 2) >= System.Math.Round(startPosition.x - offsetLeft, 2) && !hasReachedLeft)
+            if (!hasReachedLeft)
              {
                  print("Left");
                  platform.transform.Translate(new Vector3(-movementSpeed * Time.deltaTime, 0, 0));
              }
                 
             
-            if (System.Math.Round(platform.transform.position.x, 2) <= System.Math.Round(startPosition.x, 2) && !hasReachedRight) {
+            if (!hasReachedRight) {
                 print("Right");
                 platform.transform.Translate(new Vector3(movementSpeed * Time.deltaTime, 0, 0));
 
