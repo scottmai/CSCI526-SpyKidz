@@ -6,6 +6,7 @@ using Platformer.Model;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
+using UnityEngine.Analytics;
 using static Platformer.Core.Simulation;
 
 namespace Platformer.Mechanics
@@ -19,15 +20,7 @@ namespace Platformer.Mechanics
         
         async void Start()
         {
-            try
-            {
-                await UnityServices.InitializeAsync();
-                List<string> consentIdentifiers = await Events.CheckForRequiredConsents();
-            }
-            catch (ConsentCheckException e)
-            {
-                Debug.Log("Should not happen");
-            }
+
         }
         
         void OnTriggerEnter2D(Collider2D collider)
@@ -41,9 +34,7 @@ namespace Platformer.Mechanics
                     { "Level", model.level.ToString()},
                     { "Zone", this.name }
                 };
-                
-                Events.CustomData("PlayerDeath", parameters);
-                Events.Flush();
+                AnalyticsEvent.Custom("PlayerDeath", parameters);
                 var ev = Schedule<PlayerEnteredDeathZone>();
                 ev.deathzone = this;
             }

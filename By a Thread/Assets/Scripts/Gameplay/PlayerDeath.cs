@@ -18,6 +18,8 @@ namespace Platformer.Gameplay
 
         public override void Execute()
         {
+            Debug.Log("Player co-ords: ");
+            Debug.Log(model.player.transform.position);
             KillPlayer(model.player2);
             KillPlayer(model.player);
             
