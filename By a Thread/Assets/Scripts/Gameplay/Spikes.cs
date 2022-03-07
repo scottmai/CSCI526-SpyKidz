@@ -15,15 +15,6 @@ public class Spikes : MonoBehaviour
     
     async void Start()
     {
-        try
-        {
-            await UnityServices.InitializeAsync();
-            List<string> consentIdentifiers = await Events.CheckForRequiredConsents();
-        }
-        catch (ConsentCheckException e)
-        {
-            Debug.Log("Should not happen");
-        }
     }
     
     void OnTriggerEnter2D(Collider2D collider)
@@ -38,8 +29,7 @@ public class Spikes : MonoBehaviour
                 { "Zone", this.name }
             };
             
-            Events.CustomData("PlayerDeath", parameters);
-            Events.Flush();
+            AnalyticsEvent.Custom("PlayerDeath", parameters);
             Schedule<PlayerDeath>();
         }
 

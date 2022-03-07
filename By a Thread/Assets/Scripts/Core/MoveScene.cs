@@ -14,16 +14,7 @@ public class MoveScene : MonoBehaviour
   
   async void Start()
   {
-    try
-    {
 
-      await UnityServices.InitializeAsync();
-      List<string> consentIdentifiers = await Events.CheckForRequiredConsents();
-    }
-    catch (ConsentCheckException e)
-    {
-      Debug.Log("Should not happen");
-    }
   }
   
   void OnTriggerEnter2D(Collider2D other)
@@ -46,12 +37,10 @@ public class MoveScene : MonoBehaviour
           { "Level", model.level.ToString()},
           { "NumOfCoinsCollected", model.TotalCoinsCollected}
         };
-        
         Debug.Log(model.TotalCoinsCollected);
-        
-        Events.CustomData("LevelComplete", parameters);
-        Events.CustomData("CoinsCollected", coinparameters);
-        Events.Flush();
+        AnalyticsEvent.Custom("LevelComplete", parameters);
+        AnalyticsEvent.Custom("CompletedLevel", parameters);
+        AnalyticsEvent.Custom("CoinsCollected", coinparameters);
         model.level += 1;
         model.DeathCount = 0;
         model.TotalCoinsCollected = 0;
