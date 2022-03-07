@@ -298,7 +298,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 2.6000998
+  orthographic size: 2.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -3159,7 +3159,7 @@ GameObject:
   - component: {fileID: 1484720198}
   - component: {fileID: 1484720199}
   m_Layer: 0
-  m_Name: spikes
+  m_Name: spikes-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3243,6 +3243,7 @@ GameObject:
   - component: {fileID: 1778482065}
   - component: {fileID: 1778482064}
   - component: {fileID: 1778482063}
+  - component: {fileID: 1778482068}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3391,9 +3392,9 @@ MonoBehaviour:
     virtualCamera: {fileID: 611028001}
     player: {fileID: 2039364235}
     player2: {fileID: 2039364233}
-    level: 1
+    level: 2
     DeathCount: 0
-    T: {fileID: 0}
+    T: {fileID: 1778482068}
     TotalCoinsCollected: 0
     spawnPoint: {fileID: 366263990}
     jumpModifier: 0.9
@@ -3412,6 +3413,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1778482068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778482062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57913f53f4d744069b6e14e945bd2ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeStart: 0
+  timerActive: 1
 --- !u!1 &1806110937
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,7 +3439,7 @@ GameObject:
   - component: {fileID: 1806110940}
   - component: {fileID: 1806110939}
   m_Layer: 0
-  m_Name: Spike-Col
+  m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
