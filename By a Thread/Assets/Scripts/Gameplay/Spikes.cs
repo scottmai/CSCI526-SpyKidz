@@ -30,6 +30,8 @@ public class Spikes : MonoBehaviour
             };
             
             AnalyticsEvent.Custom("PlayerDeath", parameters);
+            Events.CustomData("PlayerDeath", parameters);
+            //Events.Flush();
             Schedule<PlayerDeath>();
         }
 

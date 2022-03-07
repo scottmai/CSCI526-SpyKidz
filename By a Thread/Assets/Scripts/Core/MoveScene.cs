@@ -41,6 +41,9 @@ public class MoveScene : MonoBehaviour
         AnalyticsEvent.Custom("LevelComplete", parameters);
         AnalyticsEvent.Custom("CompletedLevel", parameters);
         AnalyticsEvent.Custom("CoinsCollected", coinparameters);
+        Events.CustomData("LevelComplete", parameters);
+        Events.CustomData("CoinsCollected", coinparameters);
+        //Events.Flush();
         model.level += 1;
         model.DeathCount = 0;
         model.TotalCoinsCollected = 0;

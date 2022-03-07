@@ -35,6 +35,8 @@ namespace Platformer.Mechanics
                     { "Zone", this.name }
                 };
                 AnalyticsEvent.Custom("PlayerDeath", parameters);
+                Events.CustomData("PlayerDeath", parameters);
+                //Events.Flush();
                 var ev = Schedule<PlayerEnteredDeathZone>();
                 ev.deathzone = this;
             }

@@ -6,6 +6,9 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 
 public class RestartLevel : MonoBehaviour
 {
@@ -23,13 +26,15 @@ public class RestartLevel : MonoBehaviour
          Dictionary<string, object> parameters = new Dictionary<string, object>()
          {
              { "Level", model.level.ToString()},
-             { "Player1-x", model.player.transform.position.x},
-             { "Player1-y", model.player.transform.position.y},
-             { "Player2-x", model.player2.transform.position.x},
-             { "Player2-y", model.player2.transform.position.y}
+             { "Player1_x", model.player.transform.position.x},
+             { "Player1_y", model.player.transform.position.y},
+             { "Player2_x", model.player2.transform.position.x},
+             { "Player2_y", model.player2.transform.position.y}
          };
          
          AnalyticsEvent.Custom("RestartLevel", parameters);
+         Events.CustomData("RestartLevel", parameters);
+         //Events.Flush();
          SceneManager.LoadScene(scene.name);
      }
 }

@@ -1,5 +1,8 @@
+using System.Collections.Generic;
 using Platformer.Core;
 using Platformer.Model;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
 using UnityEngine;
 
 namespace Platformer.Mechanics
@@ -33,6 +36,20 @@ namespace Platformer.Mechanics
         void Update()
         {
             if (Instance == this) Simulation.Tick();
+        }
+        
+        async void Start()
+        {
+            try
+            {
+                await UnityServices.InitializeAsync();
+                List<string> consentIdentifiers = await Events.CheckForRequiredConsents();
+            }
+            catch (ConsentCheckException e)
+            {
+                Debug.Log("Should not happen");
+            }
+            
         }
     }
 }
