@@ -485,6 +485,18 @@ MonoBehaviour:
   power: 3
   minPower: {x: -2, y: -2}
   maxPower: {x: 2, y: 2}
+--- !u!114 &223155357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9003122974632578904, guid: f27010eeab9de428fa1a24cdbde7c019,
+    type: 3}
+  m_PrefabInstance: {fileID: 1983965301}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223155353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43059fb8a10bd4f008f1fcd69adad5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &231495980
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +706,18 @@ MonoBehaviour:
   power: 3
   minPower: {x: -2, y: -2}
   maxPower: {x: 2, y: 2}
+--- !u!114 &324107278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9003122974701183481, guid: f27010eeab9de428fa1a24cdbde7c019,
+    type: 3}
+  m_PrefabInstance: {fileID: 1983965301}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 324107273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43059fb8a10bd4f008f1fcd69adad5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &425104552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1634,8 +1658,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model:
     virtualCamera: {fileID: 0}
-    player: {fileID: 0}
-    player2: {fileID: 0}
+    player: {fileID: 324107278}
+    player2: {fileID: 223155357}
     level: 2
     DeathCount: 0
     T: {fileID: 0}
