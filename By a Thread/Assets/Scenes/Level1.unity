@@ -1662,7 +1662,7 @@ MonoBehaviour:
     player2: {fileID: 223155357}
     level: 2
     DeathCount: 0
-    T: {fileID: 0}
+    T: {fileID: 948424437}
     TotalCoinsCollected: 0
     spawnPoint: {fileID: 0}
     jumpModifier: 0.9
