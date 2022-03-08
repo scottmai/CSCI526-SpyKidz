@@ -50,6 +50,16 @@ public class PlayerForceController : MonoBehaviour
                 {
                     stopJump = false;
                 }
+
+                if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    body.bodyType = RigidbodyType2D.Static;
+                }
+
+                if (Input.GetKeyUp(KeyCode.DownArrow))
+                {
+                    body.bodyType = RigidbodyType2D.Dynamic;
+                }
             }
             else
             {
@@ -67,6 +77,16 @@ public class PlayerForceController : MonoBehaviour
                 if (IsGrounded())
                 {
                     stopJump = false;
+                }
+
+                if (Input.GetKey(KeyCode.S))
+                {
+                    body.bodyType = RigidbodyType2D.Static;
+                }
+
+                if (Input.GetKeyUp(KeyCode.S))
+                {
+                    body.bodyType = RigidbodyType2D.Dynamic;
                 }
             }
         }
