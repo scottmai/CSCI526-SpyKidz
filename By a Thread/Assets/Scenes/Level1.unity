@@ -1071,7 +1071,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 2.5
+  orthographic size: 3.0093749
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1660,7 +1660,7 @@ MonoBehaviour:
     virtualCamera: {fileID: 0}
     player: {fileID: 324107278}
     player2: {fileID: 223155357}
-    level: 2
+    level: 1
     DeathCount: 0
     T: {fileID: 948424437}
     TotalCoinsCollected: 0
