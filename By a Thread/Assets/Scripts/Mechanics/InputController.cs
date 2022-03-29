@@ -14,11 +14,19 @@ public class InputController {
         }
     }
 
-    public bool getJumpButton() {
+    public bool getJumpButtonDown() {
         if (playerNumber == 1) {
-            return Input.GetButton("Jump");
+            return Input.GetButtonDown("Jump");
         } else {
-            return Input.GetButton("JumpAlternate");
+            return Input.GetButtonDown("JumpAlternate");
+        }
+    }
+
+    public bool getJumpButtonUp() {
+        if (playerNumber == 1) {
+            return Input.GetButtonUp("Jump");
+        } else {
+            return Input.GetButtonUp("JumpAlternate");
         }
     }
 

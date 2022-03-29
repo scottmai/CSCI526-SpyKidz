@@ -41,11 +41,11 @@ public class PlayerForceController : MonoBehaviour
             if (name == "Player1")
             {
                 move.x = player1Input.getHorizontalAxis();
-                if (IsGrounded() && player1Input.getJumpButton())
+                if (IsGrounded() && player1Input.getJumpButtonDown())
                 {
                     jump = true;
                 }
-                else if (player1Input.getJumpButton())
+                else if (player1Input.getJumpButtonUp())
                 {
                     stopJump = true;
                     jump = false;
@@ -69,11 +69,11 @@ public class PlayerForceController : MonoBehaviour
             else
             {
                 move.x = player2Input.getHorizontalAxis();
-                if (IsGrounded() && player2Input.getJumpButton())
+                if (IsGrounded() && player2Input.getJumpButtonDown())
                 {
                     jump = true;
                 }
-                else if (player2Input.getJumpButton())
+                else if (player2Input.getJumpButtonUp())
                 {
                     stopJump = true;
                     jump = false;
