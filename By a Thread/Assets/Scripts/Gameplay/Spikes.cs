@@ -12,9 +12,10 @@ using Unity.Services.Core;
 
 public class Spikes : MonoBehaviour
 {
-    
+    private LifeManager lifeManager;
     async void Start()
     {
+        lifeManager = FindObjectOfType<LifeManager>();
     }
     
     void OnTriggerEnter2D(Collider2D collider)
@@ -28,7 +29,10 @@ public class Spikes : MonoBehaviour
                 { "Level", model.level.ToString()},
                 { "Zone", this.name }
             };
-            
+
+            // remove life
+            lifeManager.removeLife();
+
             AnalyticsEvent.Custom("PlayerDeath", parameters);
             Schedule<PlayerDeath>();
         }
