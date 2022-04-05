@@ -12,11 +12,6 @@ public class MoveScene : MonoBehaviour
 {
   [SerializeField] private string loadLevel; //visible in inspector
   
-  async void Start()
-  {
-
-  }
-  
   void OnTriggerEnter2D(Collider2D other)
     {
 
@@ -46,7 +41,15 @@ public class MoveScene : MonoBehaviour
         model.TotalCoinsCollected = 0;
         model.T.timeStart = 0.0f;
         model.T.timerActive = true;
-        SceneManager.LoadScene(loadLevel);
+        StartCoroutine(nxt_scene());
       }
+    }
+
+    IEnumerator nxt_scene()
+    {
+      AudioSource audsrc = GetComponent<AudioSource>();
+        audsrc.Play();
+      yield return new WaitForSeconds(audsrc.clip.length);
+        SceneManager.LoadScene(loadLevel);
     }
 }

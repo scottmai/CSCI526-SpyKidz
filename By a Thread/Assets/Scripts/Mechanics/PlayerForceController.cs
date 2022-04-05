@@ -128,6 +128,7 @@ public class PlayerForceController : MonoBehaviour
         if (jump && !stopJump)
         {
             body.AddForce(6f * body.mass * transform.up, ForceMode2D.Impulse);
+            GetComponent<AudioSource>().Play();
             jump = false;
         }
 

@@ -270,7 +270,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153254494}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &153254497
 Camera:
   m_ObjectHideFlags: 0
@@ -298,7 +298,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 2.5
+  orthographic size: 3.027747
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
