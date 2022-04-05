@@ -30,8 +30,8 @@ public class PlayerForceController : MonoBehaviour
         player1Input = new InputController(1);
         player2Input = new InputController(2);
         body = GetComponent<Rigidbody2D>();
-        Debug.Log("body");
-        Debug.Log(body);
+        // Debug.Log("body");
+        // Debug.Log(body);
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
 
