@@ -13,9 +13,33 @@ public class CoinPicker : MonoBehaviour
     private float coin = 0;
     public TextMeshProUGUI textCoins;
 
-    private void OnTriggerEnter2D(Collider2D other){
+    PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+    private GameObject[] coins;
+
+
+    void Start()
+    {
+        coins = GameObject.FindGameObjectsWithTag("Coin");
+    }
+
+    void Update()
+    {
+        if (model.TotalCoinsCollected == -1) {
+            model.TotalCoinsCollected = 0;
+            coin = 0;
+            textCoins.text = "X0";
+            foreach (GameObject c in coins)
+            {
+                print("comeback " + c.tag);
+                c.SetActive(true);
+            }
+        }
         
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        
+    }
+        private void OnTriggerEnter2D(Collider2D other){
+        
+        
         
         if(other.transform.tag == "Coin")
         {
@@ -23,7 +47,7 @@ public class CoinPicker : MonoBehaviour
             coin ++;
             //textCoins.text = "X" + coin.ToString();
             textCoins.text = "X" + model.TotalCoinsCollected.ToString();
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
         }
     }
 }

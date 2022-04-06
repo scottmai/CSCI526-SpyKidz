@@ -31,8 +31,11 @@ public class Spikes : MonoBehaviour
             };
 
             // remove life
-            lifeManager.removeLife();
-
+            if (!lifeManager.AlreadyDead())
+            {
+                lifeManager.RemoveLife();
+            }
+           
             AnalyticsEvent.Custom("PlayerDeath", parameters);
             Schedule<PlayerDeath>();
         }

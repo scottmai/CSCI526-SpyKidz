@@ -37,7 +37,11 @@ namespace Platformer.Mechanics
                 };
 
                 // remove life
-                lifeManager.removeLife();
+                if (!lifeManager.AlreadyDead())
+                {
+                    lifeManager.RemoveLife();
+                }
+                
 
                 AnalyticsEvent.Custom("PlayerDeath", parameters);
            

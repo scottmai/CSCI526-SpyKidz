@@ -32,11 +32,14 @@ namespace Platformer.Gameplay
                 player.health = 0;
                 // player.collider.enabled = false;
                 player.controlEnabled = false;
+                player.isDead = true;
 
+                //reset coins
+                model.TotalCoinsCollected = 0;
                 //if (player.audioSource && player.ouchAudio)
                 //    player.audioSource.PlayOneShot(player.ouchAudio);
                 //player.spriteRenderer.enabled = false;
-                Simulation.Schedule<PlayerSpawnNew>(.5f).player = player;
+                Simulation.Schedule<PlayerSpawn>(.5f).player = player;
             }
         }
     }
