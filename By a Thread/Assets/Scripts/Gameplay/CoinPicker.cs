@@ -23,8 +23,7 @@ public class CoinPicker : MonoBehaviour
             coinSound.Play();
             model.TotalCoinsCollected += 1;
             coin ++;
-            textCoins.text = "X" + model.TotalCoinsCollected.ToString();
-            
+            textCoins.text = model.TotalCoinsCollected.ToString() + "/" + model.MinimumCoinsRequired.ToString();            
             Destroy(other.gameObject, coinSound.clip.length);
         }
     }

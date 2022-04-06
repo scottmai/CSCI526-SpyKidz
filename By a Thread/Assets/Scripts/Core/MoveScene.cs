@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Platformer.Core;
 using Platformer.Model;
+using TMPro;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
@@ -11,13 +13,15 @@ using UnityEngine.SceneManagement;
 public class MoveScene : MonoBehaviour
 {
   [SerializeField] private string loadLevel; //visible in inspector
+  public float Timer = 3.0f;
+  public bool NotEnoughCoinsButCollidedFlag = false;
   
   void OnTriggerEnter2D(Collider2D other)
     {
-
-      if(other.CompareTag("Player")) {
+      PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+      
+      if(other.CompareTag("Player") && model.TotalCoinsCollected >= model.MinimumCoinsRequired) {
         
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
         model.T.timerActive = false;
         
         Dictionary<string, object> parameters = new Dictionary<string, object>()
@@ -43,8 +47,31 @@ public class MoveScene : MonoBehaviour
         model.T.timerActive = true;
         StartCoroutine(nxt_scene());
       }
+      else
+      {
+        NotEnoughCoinsButCollidedFlag = true;
+        GameObject bruh = GameObject.Find("Not-Enough-Coins");
+        bruh.GetComponent<SpriteRenderer>().enabled = true;
+      }
     }
 
+  private void Update()
+  {
+    if (!NotEnoughCoinsButCollidedFlag)
+    {
+      GameObject bruh = GameObject.Find("Not-Enough-Coins");
+      bruh.GetComponent<SpriteRenderer>().enabled = false;
+    }
+    else
+    {
+      Timer -= Time.deltaTime;
+      
+      if (Timer <= 0.0f)
+      {
+        NotEnoughCoinsButCollidedFlag = false;
+        Timer = 3.0f;
+      }
+    }
     IEnumerator nxt_scene()
     {
       AudioSource audsrc = GetComponent<AudioSource>();

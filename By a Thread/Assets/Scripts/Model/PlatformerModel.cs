@@ -1,4 +1,5 @@
 using Platformer.Mechanics;
+using TMPro;
 using UnityEngine;
 
 namespace Platformer.Model
@@ -26,6 +27,7 @@ namespace Platformer.Model
         public int DeathCount = 0;
         public Timer T;
         public int TotalCoinsCollected = 0;
+        public int MinimumCoinsRequired = 0;
 
         /// <summary>
         /// The spawn point in the scene.
