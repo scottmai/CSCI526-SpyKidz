@@ -16,6 +16,11 @@ public class MoveScene : MonoBehaviour
   public float Timer = 3.0f;
   public bool NotEnoughCoinsButCollidedFlag = false;
   
+  async void Start()
+  {
+
+  }
+  
   void OnTriggerEnter2D(Collider2D other)
     {
       PlatformerModel model = Simulation.GetModel<PlatformerModel>();
@@ -45,7 +50,7 @@ public class MoveScene : MonoBehaviour
         model.TotalCoinsCollected = 0;
         model.T.timeStart = 0.0f;
         model.T.timerActive = true;
-        StartCoroutine(nxt_scene());
+        SceneManager.LoadScene(loadLevel);
       }
       else
       {
@@ -72,11 +77,6 @@ public class MoveScene : MonoBehaviour
         Timer = 3.0f;
       }
     }
-    IEnumerator nxt_scene()
-    {
-      AudioSource audsrc = GetComponent<AudioSource>();
-        audsrc.Play();
-      yield return new WaitForSeconds(audsrc.clip.length);
-        SceneManager.LoadScene(loadLevel);
-    }
+    
+  }
 }

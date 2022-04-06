@@ -29,8 +29,6 @@ namespace Platformer.Gameplay
         {
             if (player.health > 0)
             {
-                GameObject child_object = player.transform.GetChild(0).gameObject;
-                child_object.GetComponent<AudioSource>().Play();
                 player.health = 0;
                 // player.collider.enabled = false;
                 player.controlEnabled = false;
