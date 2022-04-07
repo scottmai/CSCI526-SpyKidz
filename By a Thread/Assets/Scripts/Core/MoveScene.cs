@@ -72,11 +72,12 @@ public class MoveScene : MonoBehaviour
         Timer = 3.0f;
       }
     }
-    IEnumerator nxt_scene()
-    {
-      AudioSource audsrc = GetComponent<AudioSource>();
-        audsrc.Play();
-      yield return new WaitForSeconds(audsrc.clip.length);
-        SceneManager.LoadScene(loadLevel);
-    }
+  }
+  IEnumerator nxt_scene()
+  {
+    AudioSource audsrc = GetComponent<AudioSource>();
+      audsrc.Play();
+    yield return new WaitForSeconds(audsrc.clip.length);
+      SceneManager.LoadScene(loadLevel);
+  }
 }
