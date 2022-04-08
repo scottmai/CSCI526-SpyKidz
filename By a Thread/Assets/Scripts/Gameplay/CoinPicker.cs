@@ -27,10 +27,10 @@ public class CoinPicker : MonoBehaviour
         if (model.TotalCoinsCollected == -1) {
             model.TotalCoinsCollected = 0;
             coin = 0;
-            textCoins.text = "X0";
+            textCoins.text = model.TotalCoinsCollected.ToString() + "/" + model.MinimumCoinsRequired.ToString();
             foreach (GameObject c in coins)
             {
-                // print("comeback " + c.tag);
+                print("comeback " + c.tag);
                 c.SetActive(true);
             }
         }

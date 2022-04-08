@@ -2099,12 +2099,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD:By a Thread/Assets/Scenes/Puzzle.unity
   - component: {fileID: 1606776620}
   - component: {fileID: 1606776623}
   - component: {fileID: 1606776622}
   - component: {fileID: 1606776621}
   m_Layer: 5
   m_Name: Resume
+=======
+  - component: {fileID: 1406401151}
+  - component: {fileID: 1406401150}
+  - component: {fileID: 1406401149}
+  - component: {fileID: 1406401148}
+  m_Layer: 0
+  m_Name: Trigger Button
+>>>>>>> parent of cdb796e (Platform reset upon death):By a Thread/Assets/Scenes/Level2.unity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

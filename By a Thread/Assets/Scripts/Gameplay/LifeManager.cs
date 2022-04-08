@@ -13,6 +13,7 @@ public class LifeManager : MonoBehaviour
     private int lifeCounter;
     public Text livesText;
     public GameObject gameOverScreen;
+    public GameObject pauseMenuUI;
     PlatformerModel model = Simulation.GetModel<PlatformerModel>();
     PlayerForceController player1;
     PlayerForceController player2;
@@ -38,6 +39,7 @@ public class LifeManager : MonoBehaviour
             livesText.text = "Lives: x0";
             
             //idk how this works
+            pauseMenuUI.SetActive(true);
             gameOverScreen.SetActive(true);
 
             Time.timeScale = 0;
