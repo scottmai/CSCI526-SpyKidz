@@ -46,8 +46,9 @@ public class CoinPicker : MonoBehaviour
             model.TotalCoinsCollected += 1;
             coin ++;
             //textCoins.text = "X" + coin.ToString();
-            textCoins.text = "X" + model.TotalCoinsCollected.ToString();
+            textCoins.text = model.TotalCoinsCollected.ToString() + "/" + model.MinimumCoinsRequired.ToString();
             other.gameObject.SetActive(false);
+
         }
     }
 }

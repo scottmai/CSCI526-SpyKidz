@@ -1,4 +1,4 @@
-using UnityEngine; 
+using UnityEngine;
 public class PlatformMovement : MonoBehaviour
 {
     [SerializeField] GameObject platform;
@@ -45,7 +45,7 @@ public class PlatformMovement : MonoBehaviour
 
         if (flag) {
 
-            
+
             /*
             print(hasReachedLeft);
             print(hasReachedRight);
@@ -63,21 +63,22 @@ public class PlatformMovement : MonoBehaviour
             if (System.Math.Round(platform.transform.position.x, 2) >= System.Math.Round(startPosition.x, 2))
             {
                 hasReachedLeft = false;
-                hasReachedRight = true; 
+                hasReachedRight = true;
 
             }
             if (!hasReachedLeft)
              {
                 // print("Left");
+
                  platform.transform.Translate(new Vector3(-movementSpeed * Time.deltaTime, 0, 0));
              }
-                
-            
+
+
             if (!hasReachedRight) {
                 // print("Right");
                 platform.transform.Translate(new Vector3(movementSpeed * Time.deltaTime, 0, 0));
 
              }
-        }         
+        }
     }
 }
