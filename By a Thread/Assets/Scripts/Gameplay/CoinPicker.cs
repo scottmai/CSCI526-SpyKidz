@@ -30,7 +30,7 @@ public class CoinPicker : MonoBehaviour
             textCoins.text = "X0";
             foreach (GameObject c in coins)
             {
-                print("comeback " + c.tag);
+                // print("comeback " + c.tag);
                 c.SetActive(true);
             }
         }
