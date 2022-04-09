@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerForceController : MonoBehaviour
 {
     [SerializeField] private LayerMask platformLayerMask;
+    public AudioClip CoinSound;
+    public AudioClip JumpSound;
+    private AudioSource audiosrc;
 
     //public JumpState jumpState = JumpState.Grounded;
     private bool stopJump = false;
@@ -24,8 +27,7 @@ public class PlayerForceController : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        Debug.Log("body");
-        Debug.Log(body);
+        audiosrc = GetComponent<AudioSource>();
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
     }
 
@@ -128,11 +130,21 @@ public class PlayerForceController : MonoBehaviour
         if (jump && !stopJump)
         {
             body.AddForce(6f * body.mass * transform.up, ForceMode2D.Impulse);
-            GetComponent<AudioSource>().Play();
+            audiosrc.clip = JumpSound;
+            audiosrc.Play();
             jump = false;
         }
 
         previousHorizontal = move.x;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Coin")
+        {
+            Debug.Log("Coin Collected");
+            audiosrc.clip = CoinSound;
+            audiosrc.Play();
+        }
     }
 
 
@@ -145,7 +157,6 @@ public class PlayerForceController : MonoBehaviour
 
     public void Teleport(Vector3 position)
     {
-        Debug.Log(body);
         body.position = position;
         body.velocity *= 0;
     }

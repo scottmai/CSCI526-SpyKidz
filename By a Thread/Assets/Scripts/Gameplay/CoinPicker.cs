@@ -19,13 +19,10 @@ public class CoinPicker : MonoBehaviour
         
         if(other.transform.tag == "Coin")
         {
-            AudioSource coinSound = other.gameObject.GetComponent<AudioSource>();
-            coinSound.Play();
             model.TotalCoinsCollected += 1;
             coin ++;
             textCoins.text = "X" + model.TotalCoinsCollected.ToString();
-            
-            Destroy(other.gameObject, coinSound.clip.length);
+            Destroy(other.gameObject);
         }
     }
 }
