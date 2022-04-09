@@ -9,6 +9,8 @@ public class PlatformMovement : MonoBehaviour
     private float offsetLeft = 3, offsetRight = 3;
     private bool hasReachedRight = true, hasReachedLeft = false;
 
+    private LifeManager lifeManager;
+
     void Awake() {
         startPosition = platform.transform.position;
         print(startPosition);
@@ -27,11 +29,22 @@ public class PlatformMovement : MonoBehaviour
     void Start()
     {
 
+        lifeManager = FindObjectOfType<LifeManager>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //upon death, reset flag and platform position
+        if (lifeManager.GameOver())
+        {
+            // print("reset platform");
+            flag = false;
+            platform.transform.position = (startPosition);
+            platform.SetActive(true);
+        }
+
         if (flag) {
 
 
@@ -57,13 +70,14 @@ public class PlatformMovement : MonoBehaviour
             }
             if (!hasReachedLeft)
              {
-                 // print("Left");
+                // print("Left");
+
                  platform.transform.Translate(new Vector3(-movementSpeed * Time.deltaTime, 0, 0));
              }
 
 
             if (!hasReachedRight) {
-                // print("Right");
+                print("Right");
                 platform.transform.Translate(new Vector3(movementSpeed * Time.deltaTime, 0, 0));
 
              }
