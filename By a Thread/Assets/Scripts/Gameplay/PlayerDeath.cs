@@ -34,8 +34,6 @@ namespace Platformer.Gameplay
                 player.controlEnabled = false;
                 player.isDead = true;
 
-                //reset coins
-                model.TotalCoinsCollected = 0;
                 //if (player.audioSource && player.ouchAudio)
                 //    player.audioSource.PlayOneShot(player.ouchAudio);
                 //player.spriteRenderer.enabled = false;

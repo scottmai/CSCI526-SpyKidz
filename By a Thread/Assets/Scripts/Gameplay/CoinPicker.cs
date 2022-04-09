@@ -24,7 +24,8 @@ public class CoinPicker : MonoBehaviour
 
     void Update()
     {
-        if (model.TotalCoinsCollected == -1) {
+        if (model.TotalCoinsCollected == -1)
+        {
             model.TotalCoinsCollected = 0;
             coin = 0;
             textCoins.text = model.TotalCoinsCollected.ToString() + "/" + model.MinimumCoinsRequired.ToString();
@@ -34,8 +35,8 @@ public class CoinPicker : MonoBehaviour
                 c.SetActive(true);
             }
         }
-        
-        
+
+
     }
         private void OnTriggerEnter2D(Collider2D other){
         
@@ -51,4 +52,5 @@ public class CoinPicker : MonoBehaviour
 
         }
     }
+
 }

@@ -1044,7 +1044,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: RESTART
+  m_Text: TRY AGAIN
 --- !u!222 &390835142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5524,7 +5524,7 @@ GameObject:
   - component: {fileID: 1323369509}
   - component: {fileID: 1323369508}
   m_Layer: 5
-  m_Name: Restart
+  m_Name: TryAgain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5596,7 +5596,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1801452435}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: TryAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

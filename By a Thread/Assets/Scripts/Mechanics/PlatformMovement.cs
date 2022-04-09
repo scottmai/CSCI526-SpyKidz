@@ -37,7 +37,7 @@ public class PlatformMovement : MonoBehaviour
     void Update()
     {
         //upon death, reset flag and platform position
-        if (lifeManager.AlreadyDead())
+        if (lifeManager.GameOver())
         {
             // print("reset platform");
             flag = false;

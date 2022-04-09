@@ -31,14 +31,21 @@ public class LifeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //respawn, -1 life
         if (lifeCounter > 0)
         {
             livesText.text = "Lives: x" + lifeCounter;
         }
+        // game over
         else {
+
             livesText.text = "Lives: x0";
-            
-            //idk how this works
+
+            //Trigger coinpicker to reset coins
+            model.TotalCoinsCollected = -1;
+
+            //
+
             pauseMenuUI.SetActive(true);
             gameOverScreen.SetActive(true);
 
@@ -54,6 +61,9 @@ public class LifeManager : MonoBehaviour
     public bool AlreadyDead() {
         return player1.CheckIsDead() || player2.CheckIsDead();
 
+    }
+    public bool GameOver() {
+        return lifeCounter == 0;
     }
  
 }   

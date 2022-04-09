@@ -22,8 +22,6 @@ namespace Platformer.Gameplay
                 model.DeathCount += 1;
             }
             
-            //reset coins collected
-            model.TotalCoinsCollected = -1;
             //player.spriteRenderer.enabled = true;
             //player.collider2d.enabled = true;
             player.controlEnabled = false;
