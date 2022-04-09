@@ -4,13 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+using Platformer.Core;
+using Platformer.Model;
+using Platformer.Mechanics;
+using static Platformer.Core.Simulation;
+
+
 public class PauseMenu : MonoBehaviour
 {
     public static bool gamePaused = false;
     public GameObject pauseMenuUI;
+    PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+    private LifeManager lifeManager;
+
 
     void Start() {
-      pauseMenuUI.SetActive(false);
+        pauseMenuUI.SetActive(false);
+        lifeManager = FindObjectOfType<LifeManager>();
     }
     // Update is called once per frame
     // void Update()
@@ -33,11 +43,26 @@ public class PauseMenu : MonoBehaviour
       Time.timeScale = 0f;
       gamePaused = true;
     }
+    // -1 life on restart
     public void Restart() {
-      SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+        lifeManager.RemoveLife();
+        PlayerForceController player = model.player;
+        PlayerForceController player2 = model.player2;
+
+        player.Teleport(player.spawnPoint.transform.position);
+        player2.Teleport(player2.spawnPoint.transform.position);
+
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        gamePaused = false;
+
     }
     public void Quit() {
       Time.timeScale = 1f;
       SceneManager.LoadScene("Menu");
+    }
+    // Reset level completely   
+    public void TryAgain() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
     }
 }
