@@ -1,4 +1,7 @@
+using Platformer.Core;
 using Platformer.Gameplay;
+using Platformer.Model;
+using TMPro;
 using UnityEngine;
 using static Platformer.Core.Simulation;
 
@@ -11,6 +14,7 @@ namespace Platformer.Mechanics
     {
         void OnTriggerEnter2D(Collider2D collider)
         {
+            PlatformerModel model = Simulation.GetModel<PlatformerModel>();
             var p = collider.gameObject.GetComponent<PlayerController>();
             if (p != null)
             {
