@@ -17,10 +17,11 @@ namespace Platformer.Mechanics
     /// </summary>
     public class DeathZone : MonoBehaviour
     {
-        
+        private LifeManager lifeManager;
+
         async void Start()
         {
-
+            lifeManager = FindObjectOfType<LifeManager>();
         }
         
         void OnTriggerEnter2D(Collider2D collider)
@@ -34,7 +35,16 @@ namespace Platformer.Mechanics
                     { "Level", model.level.ToString()},
                     { "Zone", this.name }
                 };
+
+                // remove life
+                if (!lifeManager.AlreadyDead())
+                {
+                    lifeManager.RemoveLife();
+                }
+                
+
                 AnalyticsEvent.Custom("PlayerDeath", parameters);
+           
                 var ev = Schedule<PlayerEnteredDeathZone>();
                 ev.deathzone = this;
             }

@@ -24,6 +24,7 @@ public class PlayerForceController : MonoBehaviour
     public Transform spawnPoint;
 
     public float maxSpeed = 5f;
+    public bool isDead;
 
     private InputController player1Input;
     private InputController player2Input;
@@ -35,6 +36,7 @@ public class PlayerForceController : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         audiosrc = GetComponent<AudioSource>();
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        isDead = false;
     }
 
     void Update()
@@ -165,5 +167,13 @@ public class PlayerForceController : MonoBehaviour
     {
         body.position = position;
         body.velocity *= 0;
+    }
+    public void ResetIsDead()
+    {
+        isDead = false;
+    }
+    public bool CheckIsDead()
+    {
+        return isDead;
     }
 }
