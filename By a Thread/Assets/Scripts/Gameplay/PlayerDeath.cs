@@ -20,7 +20,7 @@ namespace Platformer.Gameplay
         {
             Debug.Log("Player co-ords: ");
             Debug.Log(model.player.transform.position);
-            model.TotalCoinsCollected = 0;
+           // model.TotalCoinsCollected = 0;
             KillPlayer(model.player2);
             KillPlayer(model.player);
             
