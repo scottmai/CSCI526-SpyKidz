@@ -14,14 +14,16 @@ public class Menu : MonoBehaviour
     void Start()
     {
         Button btn = begin.GetComponent<Button>();
-		btn.onClick.AddListener(loadLevel1);
+		btn.onClick.AddListener(onBegin);
+
+        begin.GetComponentInChildren<Text>().text = "Start Level " + MainManager.lastLevelUnlocked;
 
         btn = selectLevel.GetComponent<Button>();
 		btn.onClick.AddListener(loadSelectLevel);
     }
 
-    void loadLevel1(){
-        SceneManager.LoadScene("Level1");
+    void onBegin(){
+        SceneManager.LoadScene("Level" + MainManager.lastLevelUnlocked);
     }
 
     void loadSelectLevel(){
