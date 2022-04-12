@@ -35,7 +35,8 @@ public class CoinPicker : MonoBehaviour
                 c.SetActive(true);
             }
         }
-
+        
+        textCoins.text = model.TotalCoinsCollected.ToString() + "/" + model.MinimumCoinsRequired.ToString();
 
     }
         private void OnTriggerEnter2D(Collider2D other){
