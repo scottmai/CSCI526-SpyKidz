@@ -72,6 +72,7 @@ public class MoveScene : MonoBehaviour
         Timer = 3.0f;
       }
     }
+    }
     IEnumerator nxt_scene()
     {
       AudioSource audsrc = GetComponent<AudioSource>();
