@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,13 +21,20 @@ public class PlayerForceController : MonoBehaviour
     public Transform spawnPoint;
 
     public float maxSpeed = 5f;
+    public bool isDead;
+
+    private InputController player1Input;
+    private InputController player2Input;
 
     void Start()
     {
+        player1Input = new InputController(1);
+        player2Input = new InputController(2);
         body = GetComponent<Rigidbody2D>();
-        Debug.Log("body");
-        Debug.Log(body);
+        // Debug.Log("body");
+        // Debug.Log(body);
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        isDead = false;
     }
 
     void Update()
@@ -35,12 +43,12 @@ public class PlayerForceController : MonoBehaviour
         {
             if (name == "Player1")
             {
-                move.x = Input.GetAxis("Horizontal");
-                if (IsGrounded() && Input.GetButtonDown("Jump"))
+                move.x = player1Input.getHorizontalAxis();
+                if (IsGrounded() && player1Input.getJumpButtonDown())
                 {
                     jump = true;
                 }
-                else if (Input.GetButtonUp("Jump"))
+                else if (player1Input.getJumpButtonUp())
                 {
                     stopJump = true;
                     jump = false;
@@ -51,24 +59,24 @@ public class PlayerForceController : MonoBehaviour
                     stopJump = false;
                 }
 
-                if (Input.GetKey(KeyCode.DownArrow))
+                if (player1Input.getDown())
                 {
                     body.bodyType = RigidbodyType2D.Static;
                 }
 
-                if (Input.GetKeyUp(KeyCode.DownArrow))
+                if (player1Input.getUp())
                 {
                     body.bodyType = RigidbodyType2D.Dynamic;
                 }
             }
             else
             {
-                move.x = Input.GetAxis("HorizontalAlternate");
-                if (IsGrounded() && Input.GetButtonDown("JumpAlternate"))
+                move.x = player2Input.getHorizontalAxis();
+                if (IsGrounded() && player2Input.getJumpButtonDown())
                 {
                     jump = true;
                 }
-                else if (Input.GetButtonUp("JumpAlternate"))
+                else if (player2Input.getJumpButtonUp())
                 {
                     stopJump = true;
                     jump = false;
@@ -79,12 +87,12 @@ public class PlayerForceController : MonoBehaviour
                     stopJump = false;
                 }
 
-                if (Input.GetKey(KeyCode.S))
+                if (player2Input.getDown())
                 {
                     body.bodyType = RigidbodyType2D.Static;
                 }
 
-                if (Input.GetKeyUp(KeyCode.S))
+                if (player2Input.getUp())
                 {
                     body.bodyType = RigidbodyType2D.Dynamic;
                 }
@@ -147,5 +155,13 @@ public class PlayerForceController : MonoBehaviour
         Debug.Log(body);
         body.position = position;
         body.velocity *= 0;
+    }
+    public void ResetIsDead()
+    {
+        isDead = false;
+    }
+    public bool CheckIsDead()
+    {
+        return isDead;
     }
 }

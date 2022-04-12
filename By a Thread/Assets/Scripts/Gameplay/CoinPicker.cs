@@ -13,17 +13,44 @@ public class CoinPicker : MonoBehaviour
     private float coin = 0;
     public TextMeshProUGUI textCoins;
 
-    private void OnTriggerEnter2D(Collider2D other){
+    PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+    private GameObject[] coins;
+
+
+    void Start()
+    {
+        coins = GameObject.FindGameObjectsWithTag("Coin");
+    }
+
+    void Update()
+    {
+        if (model.TotalCoinsCollected == -1)
+        {
+            model.TotalCoinsCollected = 0;
+            coin = 0;
+            textCoins.text = model.TotalCoinsCollected.ToString() + "/" + model.MinimumCoinsRequired.ToString();
+            foreach (GameObject c in coins)
+            {
+                print("comeback " + c.tag);
+                c.SetActive(true);
+            }
+        }
+
+
+    }
+        private void OnTriggerEnter2D(Collider2D other){
         
-        PlatformerModel model = Simulation.GetModel<PlatformerModel>();
+        
         
         if(other.transform.tag == "Coin")
         {
             model.TotalCoinsCollected += 1;
             coin ++;
             //textCoins.text = "X" + coin.ToString();
-            textCoins.text = "X" + model.TotalCoinsCollected.ToString();
-            Destroy(other.gameObject);
+            textCoins.text = model.TotalCoinsCollected.ToString() + "/" + model.MinimumCoinsRequired.ToString();
+            other.gameObject.SetActive(false);
+
         }
     }
+
 }

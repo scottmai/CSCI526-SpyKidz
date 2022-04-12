@@ -1,4 +1,4 @@
-using UnityEngine; 
+using UnityEngine;
 public class PlatformMovement : MonoBehaviour
 {
     [SerializeField] GameObject platform;
@@ -8,6 +8,8 @@ public class PlatformMovement : MonoBehaviour
 
     private float offsetLeft = 3, offsetRight = 3;
     private bool hasReachedRight = true, hasReachedLeft = false;
+
+    private LifeManager lifeManager;
 
     void Awake() {
         startPosition = platform.transform.position;
@@ -27,14 +29,25 @@ public class PlatformMovement : MonoBehaviour
     void Start()
     {
 
+        lifeManager = FindObjectOfType<LifeManager>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        //upon death, reset flag and platform position
+        if (lifeManager.GameOver())
+        {
+            // print("reset platform");
+            flag = false;
+            platform.transform.position = (startPosition);
+            platform.SetActive(true);
+        }
+
         if (flag) {
 
-            
+
             /*
             print(hasReachedLeft);
             print(hasReachedRight);
@@ -52,21 +65,22 @@ public class PlatformMovement : MonoBehaviour
             if (System.Math.Round(platform.transform.position.x, 2) >= System.Math.Round(startPosition.x, 2))
             {
                 hasReachedLeft = false;
-                hasReachedRight = true; 
+                hasReachedRight = true;
 
             }
             if (!hasReachedLeft)
              {
-                 print("Left");
+                // print("Left");
+
                  platform.transform.Translate(new Vector3(-movementSpeed * Time.deltaTime, 0, 0));
              }
-                
-            
+
+
             if (!hasReachedRight) {
                 print("Right");
                 platform.transform.Translate(new Vector3(movementSpeed * Time.deltaTime, 0, 0));
 
              }
-        }         
+        }
     }
 }

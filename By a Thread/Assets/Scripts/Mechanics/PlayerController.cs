@@ -34,7 +34,6 @@ namespace Platformer.Mechanics
         /*internal new*/ public AudioSource audioSource;
         public Health health;
         public bool controlEnabled = true;
-
         bool jump;
         Vector2 move;
         internal SpriteRenderer spriteRenderer;
@@ -57,6 +56,7 @@ namespace Platformer.Mechanics
 
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
             rb.isKinematic = false;
+
         }
 
         protected override void Update()
@@ -172,6 +172,7 @@ namespace Platformer.Mechanics
 
             base.Update();
         }
+       
     }
 
     
