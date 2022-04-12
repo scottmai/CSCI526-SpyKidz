@@ -42,6 +42,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Grid (1)
+    uniqueID: 1141281671
+    locked: 0
+  - name: Purple Nebula
+    uniqueID: 2141882903
+    locked: 0
+  - name: Green Nebula
+    uniqueID: 3058450795
+    locked: 0
+  - name: Blue Nebula
+    uniqueID: 2401844937
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
