@@ -235,7 +235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88157956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9372873, y: -0.022431392, z: -12.122183}
+  m_LocalPosition: {x: -1.389776, y: -0.022431392, z: -10.122183}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 501416472}
@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 131901495}
   m_Layer: 0
   m_Name: Next Level Door
-  m_TagString: Untagged
+  m_TagString: Next Level
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -573,9 +573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf06ac62a1ff6244aae7e508e5982040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 3
-  minPower: {x: -2, y: -2}
-  maxPower: {x: 2, y: 2}
 --- !u!114 &223155357 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9003122974632578904, guid: f27010eeab9de428fa1a24cdbde7c019,
@@ -966,9 +963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf06ac62a1ff6244aae7e508e5982040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 3
-  minPower: {x: -2, y: -2}
-  maxPower: {x: 2, y: 2}
 --- !u!114 &324107278 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9003122974701183481, guid: f27010eeab9de428fa1a24cdbde7c019,
@@ -1558,7 +1552,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524179686}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &524179689
 Camera:
   m_ObjectHideFlags: 0
@@ -1586,7 +1580,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 2.5
+  orthographic size: 3.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1610,7 +1604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524179686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9372873, y: -0.022431392, z: -12.122183}
+  m_LocalPosition: {x: -1.389776, y: -0.022431392, z: -10.122183}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
