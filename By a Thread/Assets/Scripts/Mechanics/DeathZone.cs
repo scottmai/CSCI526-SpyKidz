@@ -44,6 +44,8 @@ namespace Platformer.Mechanics
                 
 
                 AnalyticsEvent.Custom("PlayerDeath", parameters);
+                AudioSource audsrc = GetComponent<AudioSource>();
+                audsrc.Play();
            
                 var ev = Schedule<PlayerEnteredDeathZone>();
                 ev.deathzone = this;

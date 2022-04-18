@@ -37,6 +37,8 @@ public class Spikes : MonoBehaviour
             }
            
             AnalyticsEvent.Custom("PlayerDeath", parameters);
+            AudioSource audsrc = GetComponent<AudioSource>();
+            audsrc.Play();
             Schedule<PlayerDeath>();
         }
 
