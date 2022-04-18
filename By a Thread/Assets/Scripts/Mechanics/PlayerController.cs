@@ -62,7 +62,7 @@ namespace Platformer.Mechanics
         protected override void Update()
         {
             if (controlEnabled)
-            {
+            { 
                 if (name == "Player1")
                 {
                     move.x = Input.GetAxis("Horizontal");

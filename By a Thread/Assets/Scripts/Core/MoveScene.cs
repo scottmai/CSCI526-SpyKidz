@@ -46,6 +46,7 @@ public class MoveScene : MonoBehaviour
         AnalyticsEvent.Custom("CompletedLevel", parameters);
         AnalyticsEvent.Custom("CoinsCollected", coinparameters);
         model.level += 1;
+        MainManager.setLastLevelUnlocked(model.level);
         model.DeathCount = 0;
         model.TotalCoinsCollected = 0;
         model.T.timeStart = 0.0f;

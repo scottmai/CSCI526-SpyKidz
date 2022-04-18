@@ -10,7 +10,6 @@ public class PlayerForceController : MonoBehaviour
     //public JumpState jumpState = JumpState.Grounded;
     private bool stopJump = false;
     bool jump = false;
-
     Vector2 move;
     float previousHorizontal = 0;
     public bool controlEnabled = true;
@@ -22,19 +21,20 @@ public class PlayerForceController : MonoBehaviour
 
     public float maxSpeed = 5f;
     public bool isDead;
-
     private InputController player1Input;
     private InputController player2Input;
+    public AudioClip CoinSound;
+    public AudioClip JumpSound;
+    public AudioSource audiosrc;
 
     void Start()
     {
         player1Input = new InputController(1);
         player2Input = new InputController(2);
         body = GetComponent<Rigidbody2D>();
-        // Debug.Log("body");
-        // Debug.Log(body);
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         isDead = false;
+        audiosrc = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -136,10 +136,20 @@ public class PlayerForceController : MonoBehaviour
         if (jump && !stopJump)
         {
             body.AddForce(6f * body.mass * transform.up, ForceMode2D.Impulse);
+            audiosrc.clip = JumpSound;
+            audiosrc.Play();
             jump = false;
         }
 
         previousHorizontal = move.x;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.gameObject.tag == "Coin")
+        {
+            audiosrc.clip = CoinSound;
+            audiosrc.Play();
+        }
     }
 
 
@@ -152,7 +162,6 @@ public class PlayerForceController : MonoBehaviour
 
     public void Teleport(Vector3 position)
     {
-        Debug.Log(body);
         body.position = position;
         body.velocity *= 0;
     }
