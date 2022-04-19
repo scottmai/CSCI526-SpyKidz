@@ -659,7 +659,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 3.3281972
+  orthographic size: 2.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7089,7 +7089,7 @@ MonoBehaviour:
     DeathCount: 0
     T: {fileID: 1778482068}
     TotalCoinsCollected: 0
-    MinimumCoinsRequired: 2
+    MinimumCoinsRequired: 3
     spawnPoint: {fileID: 366263990}
     jumpModifier: 0.9
     jumpDeceleration: 0
@@ -8115,9 +8115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf06ac62a1ff6244aae7e508e5982040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 3
-  minPower: {x: -2, y: -2}
-  maxPower: {x: 2, y: 2}
 --- !u!114 &2039364239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8130,9 +8127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf06ac62a1ff6244aae7e508e5982040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 3
-  minPower: {x: -2, y: -2}
-  maxPower: {x: 2, y: 2}
 --- !u!1001 &1806885420020375488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8153,7 +8147,7 @@ PrefabInstance:
     - target: {fileID: 4979426703847801966, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
       propertyPath: m_text
-      value: 0/2
+      value: 0/3
       objectReference: {fileID: 0}
     - target: {fileID: 4979426703908445229, guid: c2bf1f645c4784ee6bc8f86c9c78ec11,
         type: 3}
