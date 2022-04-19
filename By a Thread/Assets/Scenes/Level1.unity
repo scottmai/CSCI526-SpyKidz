@@ -1448,7 +1448,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 2.5
+  orthographic size: 3.0093749
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8358,7 +8358,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8b793cae8fffcc14590914dae16f6965, type: 2}
+      objectReference: {fileID: 9100000, guid: fd827f077fb277c4f900699f2496dd74, type: 2}
     - target: {fileID: 9003122974701183478, guid: f27010eeab9de428fa1a24cdbde7c019,
         type: 3}
       propertyPath: textCoins
@@ -8378,7 +8378,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 8b793cae8fffcc14590914dae16f6965, type: 2}
+      objectReference: {fileID: 9100000, guid: fd827f077fb277c4f900699f2496dd74, type: 2}
     - target: {fileID: 9003122974701183487, guid: f27010eeab9de428fa1a24cdbde7c019,
         type: 3}
       propertyPath: m_Sprite
