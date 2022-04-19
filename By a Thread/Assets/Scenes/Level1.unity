@@ -7985,6 +7985,22 @@ PrefabInstance:
       propertyPath: textCoins
       value: 
       objectReference: {fileID: 876282771}
+    - target: {fileID: 9003122974632578910, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2717920588507469212, guid: 9c447c54c8e0416e9446cadb88c48fd3,
+        type: 3}
+    - target: {fileID: 9003122974632578911, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003122974632578911, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fd827f077fb277c4f900699f2496dd74, type: 2}
     - target: {fileID: 9003122974701183478, guid: f27010eeab9de428fa1a24cdbde7c019,
         type: 3}
       propertyPath: textCoins
@@ -7995,6 +8011,22 @@ PrefabInstance:
       propertyPath: spawnPoint
       value: 
       objectReference: {fileID: 192468898}
+    - target: {fileID: 9003122974701183484, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003122974701183484, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fd827f077fb277c4f900699f2496dd74, type: 2}
+    - target: {fileID: 9003122974701183487, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2253685004373748758, guid: 9c447c54c8e0416e9446cadb88c48fd3,
+        type: 3}
     - target: {fileID: 9003122976073691548, guid: f27010eeab9de428fa1a24cdbde7c019,
         type: 3}
       propertyPath: m_RootOrder

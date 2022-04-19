@@ -26,6 +26,7 @@ public class PlayerForceController : MonoBehaviour
     public AudioClip CoinSound;
     public AudioClip JumpSound;
     public AudioSource audiosrc;
+    internal Animator animator;
 
     void Start()
     {
@@ -35,6 +36,7 @@ public class PlayerForceController : MonoBehaviour
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         isDead = false;
         audiosrc = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -44,14 +46,29 @@ public class PlayerForceController : MonoBehaviour
             if (name == "Player1")
             {
                 move.x = player1Input.getHorizontalAxis();
+                if (move.x > 0 || move.x < 0)
+                    animator.SetTrigger("idle-run");
+                else
+                {
+                    animator.ResetTrigger("idle-run");
+                    animator.SetTrigger("run-idle");
+                }
+
+                if ((move.x > 0 || move.x < 0) && IsGrounded() && player1Input.getJumpButtonDown())
+                    animator.SetTrigger("run-jump");
+
                 if (IsGrounded() && player1Input.getJumpButtonDown())
                 {
                     jump = true;
+                    animator.SetTrigger("idle-jump");
                 }
                 else if (player1Input.getJumpButtonUp())
                 {
                     stopJump = true;
                     jump = false;
+                    animator.ResetTrigger("idle-jump");
+                    animator.SetTrigger("jump-idle");
+                    animator.ResetTrigger("run-jump");
                 }
 
                 if (IsGrounded())
@@ -72,14 +89,29 @@ public class PlayerForceController : MonoBehaviour
             else
             {
                 move.x = player2Input.getHorizontalAxis();
+                if (move.x > 0 || move.x < 0)
+                    animator.SetTrigger("idle-run");
+                else
+                {
+                    animator.ResetTrigger("idle-run");
+                    animator.SetTrigger("run-idle");
+                }
+
+                if ((move.x > 0 || move.x < 0) && IsGrounded() && player2Input.getJumpButtonDown())
+                    animator.SetTrigger("run-jump");
+
                 if (IsGrounded() && player2Input.getJumpButtonDown())
                 {
                     jump = true;
+                    animator.SetTrigger("idle-jump");
                 }
                 else if (player2Input.getJumpButtonUp())
                 {
                     stopJump = true;
                     jump = false;
+                    animator.ResetTrigger("idle-jump");
+                    animator.SetTrigger("jump-idle");
+                    animator.ResetTrigger("run-jump");
                 }
 
                 if (IsGrounded())
