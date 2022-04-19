@@ -10,7 +10,7 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
-public class MoveScene : MonoBehaviour
+public class MoveScene2 : MonoBehaviour
 {
   [SerializeField] private string loadLevel; //visible in inspector
   public float Timer = 3.0f;
@@ -56,7 +56,7 @@ public class MoveScene : MonoBehaviour
       else
       {
         NotEnoughCoinsButCollidedFlag = true;
-        GameObject bruh = GameObject.Find("Not-Enough-Coins");
+        GameObject bruh = GameObject.Find("Not-Enough-Coins2");
         bruh.GetComponent<SpriteRenderer>().enabled = true;
       }
     }
@@ -66,7 +66,7 @@ public class MoveScene : MonoBehaviour
 
     if (!NotEnoughCoinsButCollidedFlag)
     {
-      GameObject bruh = GameObject.Find("Not-Enough-Coins");
+      GameObject bruh = GameObject.Find("Not-Enough-Coins2");
       bruh.GetComponent<SpriteRenderer>().enabled = false;
     }
     else
