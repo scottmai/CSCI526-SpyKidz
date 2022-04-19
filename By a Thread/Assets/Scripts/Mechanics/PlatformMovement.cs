@@ -2,6 +2,9 @@ using UnityEngine;
 public class PlatformMovement : MonoBehaviour
 {
     [SerializeField] GameObject platform;
+    [SerializeField] Sprite onSprite;
+    [SerializeField] Sprite offSprite;
+
     private float movementSpeed = 1.5f;
     private bool flag = false;
     Vector3 startPosition = Vector3.zero;
@@ -22,7 +25,7 @@ public class PlatformMovement : MonoBehaviour
         if (other.gameObject.name == "Player1" | other.gameObject.name == "Player2")
         {
             flag = true;
-            print("Move");
+            gameObject.GetComponent<SpriteRenderer>().sprite = onSprite;
         }
     }
     // Start is called before the first frame update
