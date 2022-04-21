@@ -10220,8 +10220,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453082750}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.8, y: -3.421, z: 432.09836}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 30.8206, y: -3.1557, z: 432.09836}
+  m_LocalScale: {x: 1.3411665, y: 1.6541057, z: 1}
   m_Children: []
   m_Father: {fileID: 1977471748}
   m_RootOrder: 0
@@ -10978,8 +10978,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600488501}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 34.78, y: 7.52, z: 432.09836}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 34.6166, y: 7.6535, z: 432.09836}
+  m_LocalScale: {x: 1.5295501, y: 1.6854, z: 1}
   m_Children: []
   m_Father: {fileID: 1977471748}
   m_RootOrder: 1
@@ -11413,10 +11413,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'GAME OVER
-
-
-    Press Restart to try again'
+  m_Text: GAME OVER
 --- !u!222 &1757968835
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12497,6 +12494,26 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4737381490540246011, guid: 7ecb8d3fe9f404de3a57707bf5d1f059,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -65.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737381490540246011, guid: 7ecb8d3fe9f404de3a57707bf5d1f059,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737381491658546567, guid: 7ecb8d3fe9f404de3a57707bf5d1f059,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 63.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4737381491658546567, guid: 7ecb8d3fe9f404de3a57707bf5d1f059,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.95
+      objectReference: {fileID: 0}
     - target: {fileID: 5818458074833191666, guid: 7ecb8d3fe9f404de3a57707bf5d1f059,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -12516,6 +12533,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_VerticalOverflow
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652933806417985257, guid: 7ecb8d3fe9f404de3a57707bf5d1f059,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.9641224
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652933806417985257, guid: 7ecb8d3fe9f404de3a57707bf5d1f059,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.562864
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652933806417985257, guid: 7ecb8d3fe9f404de3a57707bf5d1f059,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -67.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 7652933806417985257, guid: 7ecb8d3fe9f404de3a57707bf5d1f059,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.13
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

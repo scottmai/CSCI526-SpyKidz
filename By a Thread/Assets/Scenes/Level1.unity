@@ -8014,8 +8014,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1848860969}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 62.43, y: -0.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 62.2442, y: -0.399, z: 0}
+  m_LocalScale: {x: 1.4413527, y: 1.5342382, z: 1}
   m_Children: []
   m_Father: {fileID: 1950605728}
   m_RootOrder: 4
@@ -8549,10 +8549,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'GAME OVER
-
-
-    Press Restart to try again'
+  m_Text: GAME OVER
 --- !u!222 &2057268996
 CanvasRenderer:
   m_ObjectHideFlags: 0
