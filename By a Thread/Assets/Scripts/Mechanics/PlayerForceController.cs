@@ -51,12 +51,12 @@ public class PlayerForceController : MonoBehaviour
                 {
                     if (move.x > 0)
                     {
-                        charScale.x = 0.5f;
+                        charScale.x = -0.5f;
                         animator.SetTrigger("idle-run");
                     }
                     else
                     {
-                        charScale.x = -0.5f;
+                        charScale.x = 0.5f;
                         animator.SetTrigger("idle-run");
                     }
                 }
@@ -92,12 +92,12 @@ public class PlayerForceController : MonoBehaviour
                 {
                     if (move.x > 0)
                     {
-                        charScale.x = 0.5f;
+                        charScale.x = -0.5f;
                         animator.SetTrigger("idle-crawl");
                     }
                     else
                     {
-                        charScale.x = -0.5f;
+                        charScale.x = 0.5f;
                         animator.SetTrigger("idle-crawl");
                     }
                 }
