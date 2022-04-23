@@ -34,12 +34,12 @@ public class LifeManager : MonoBehaviour
         //respawn, -1 life
         if (lifeCounter > 0)
         {
-            livesText.text = "Lives: x" + lifeCounter;
+            livesText.text = ": x" + lifeCounter;
         }
         // game over
         else {
 
-            livesText.text = "Lives: x0";
+            livesText.text = ": x0";
 
             //Trigger coinpicker to reset coins
             model.TotalCoinsCollected = -1;
