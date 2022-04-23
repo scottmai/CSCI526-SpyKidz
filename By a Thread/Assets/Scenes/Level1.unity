@@ -7975,6 +7975,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6968923186366306641, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_Distance
+      value: 2.3921907
+      objectReference: {fileID: 0}
     - target: {fileID: 9003122974632578904, guid: f27010eeab9de428fa1a24cdbde7c019,
         type: 3}
       propertyPath: spawnPoint
@@ -7985,6 +7990,16 @@ PrefabInstance:
       propertyPath: textCoins
       value: 
       objectReference: {fileID: 876282771}
+    - target: {fileID: 9003122974632578910, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003122974632578910, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9003122974632578910, guid: f27010eeab9de428fa1a24cdbde7c019,
         type: 3}
       propertyPath: m_Sprite
@@ -8021,6 +8036,16 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: fd827f077fb277c4f900699f2496dd74, type: 2}
+    - target: {fileID: 9003122974701183487, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003122974701183487, guid: f27010eeab9de428fa1a24cdbde7c019,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9003122974701183487, guid: f27010eeab9de428fa1a24cdbde7c019,
         type: 3}
       propertyPath: m_Sprite

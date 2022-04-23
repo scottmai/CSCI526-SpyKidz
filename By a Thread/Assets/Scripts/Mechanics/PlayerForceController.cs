@@ -41,13 +41,25 @@ public class PlayerForceController : MonoBehaviour
 
     void Update()
     {
+        Vector3 charScale = transform.localScale;
         if (controlEnabled)
         {
             if (name == "Player1")
             {
                 move.x = player1Input.getHorizontalAxis();
                 if (move.x > 0 || move.x < 0)
-                    animator.SetTrigger("idle-run");
+                {
+                    if (move.x > 0)
+                    {
+                        charScale.x = 0.5f;
+                        animator.SetTrigger("idle-run");
+                    }
+                    else
+                    {
+                        charScale.x = -0.5f;
+                        animator.SetTrigger("idle-run");
+                    }
+                }
                 else
                 {
                     animator.ResetTrigger("idle-run");
@@ -76,6 +88,20 @@ public class PlayerForceController : MonoBehaviour
                     stopJump = false;
                 }
 
+                if ((move.x > 0 || move.x < 0) && IsGrounded() && player1Input.getDown())       // sideways crawl
+                {
+                    if (move.x > 0)
+                    {
+                        charScale.x = 0.5f;
+                        animator.SetTrigger("idle-crawl");
+                    }
+                    else
+                    {
+                        charScale.x = -0.5f;
+                        animator.SetTrigger("idle-crawl");
+                    }
+                }
+
                 if (player1Input.getDown())
                 {
                     body.bodyType = RigidbodyType2D.Static;
@@ -84,13 +110,26 @@ public class PlayerForceController : MonoBehaviour
                 if (player1Input.getUp())
                 {
                     body.bodyType = RigidbodyType2D.Dynamic;
+                    animator.ResetTrigger("idle-crawl");
+                    animator.SetTrigger("crawl-idle");
                 }
             }
             else
             {
                 move.x = player2Input.getHorizontalAxis();
-                if (move.x > 0 || move.x < 0)
-                    animator.SetTrigger("idle-run");
+                if (move.x > 0 || move.x < 0) {
+                    if (move.x > 0)
+                    {
+                        charScale.x = -0.5f;
+                        animator.SetTrigger("idle-run");
+                    }
+                    else
+                    {
+                        charScale.x = 0.5f;
+                        animator.SetTrigger("idle-run");
+                    }
+                }
+                    
                 else
                 {
                     animator.ResetTrigger("idle-run");
@@ -119,6 +158,20 @@ public class PlayerForceController : MonoBehaviour
                     stopJump = false;
                 }
 
+                if ((move.x > 0 || move.x < 0) && IsGrounded() && player2Input.getDown())       // sideways crawl
+                {
+                    if (move.x > 0)
+                    {
+                        charScale.x = -0.5f;
+                        animator.SetTrigger("idle-crawl");
+                    }
+                    else
+                    {
+                        charScale.x = 0.5f;
+                        animator.SetTrigger("idle-crawl");
+                    }
+                }
+
                 if (player2Input.getDown())
                 {
                     body.bodyType = RigidbodyType2D.Static;
@@ -127,43 +180,19 @@ public class PlayerForceController : MonoBehaviour
                 if (player2Input.getUp())
                 {
                     body.bodyType = RigidbodyType2D.Dynamic;
+                    animator.ResetTrigger("idle-crawl");
+                    animator.SetTrigger("crawl-idle");
                 }
             }
         }
+        transform.localScale = charScale;
     }
 
     protected void FixedUpdate()
     {
-        // max velocity 5
-        // 0.1 per frame is a little slow
-        // 0.35 to 0.05
+        
         float scaleFactor = 0.4f;
         body.AddForce(scaleFactor * move, ForceMode2D.Impulse);
-
-        //if (Mathf.Abs(body.velocity.x) < maxSpeed)
-        //{
-        //    float scaleFactor = 0.1f;
-        //    body.AddForce(scaleFactor * move, ForceMode2D.Impulse);
-        //}
-
-        //if ((posDirection && (body.velocity.x < velocityLimit))
-        //    || (!posDirection && (body.velocity.x > velocityLimit)))
-        //{
-        //    // need to consider only velocity due to player movement forces
-        //    // if player is pulled that should affect this separately
-
-        //    float speedDiff = velocityLimit - body.velocity.x;
-        //    float scaleFactor = 10f * body.mass;
-        //    body.AddForce(new Vector2(scaleFactor * speedDiff * Mathf.Abs(move.x), 0), ForceMode2D.Impulse);
-        //}
-
-        //if (Mathf.Abs(move.x) - Mathf.Abs(previousHorizontal) < 0)
-        //{
-        //    float speedDiff = -body.velocity.x;
-        //    float moveDiff = 1 - Mathf.Abs(move.x);
-        //    float scaleFactor = 0.5f * body.mass;
-        //    body.AddForce(new Vector2(scaleFactor * speedDiff * moveDiff, 0), ForceMode2D.Impulse);
-        //}
 
         if (jump && !stopJump)
         {

@@ -21,7 +21,9 @@ public class Line_Controller : MonoBehaviour
     {
         for(int i = 0; i < points.Length; i++)
         {
-            lr.SetPosition(i, points[i].position);
+            //lr.SetPosition(i, points[i].position);
+            lr.SetPosition(i, points[i].position + new Vector3(0, 0.3f, 0));
+
         }
     }
 }
