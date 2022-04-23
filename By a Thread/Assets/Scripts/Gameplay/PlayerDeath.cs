@@ -34,11 +34,14 @@ namespace Platformer.Gameplay
                 // player.collider.enabled = false;
                 player.controlEnabled = false;
                 player.isDead = true;
+                player.animator.SetTrigger("any-death");
 
                 //if (player.audioSource && player.ouchAudio)
                 //    player.audioSource.PlayOneShot(player.ouchAudio);
                 //player.spriteRenderer.enabled = false;
                 Simulation.Schedule<PlayerSpawn>(.5f).player = player;
+
+
             }
         }
     }

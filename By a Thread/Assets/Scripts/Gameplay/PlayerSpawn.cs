@@ -30,10 +30,19 @@ namespace Platformer.Gameplay
             player.health += 1;
             player.isDead = false;
 
+
+            player.animator.ResetTrigger("any-death");
+
+
             player.Teleport(player.spawnPoint.transform.position);
+            System.Threading.Thread.Sleep(200);
+
+
+
             //player.jumpState = PlayerController.JumpState.Grounded;
             //player.animator.SetBool("dead", false);
             Simulation.Schedule<EnablePlayerInputNew>(0).player = player;
+            player.animator.SetTrigger("death-idle");
         }
     }
 }

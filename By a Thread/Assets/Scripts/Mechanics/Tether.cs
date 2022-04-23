@@ -6,7 +6,7 @@ public class Tether : MonoBehaviour
 
     public HingeJoint2D player2;
 
-    public GameObject tetherPrefab;
+    /*public GameObject tetherPrefab;
 
     public int tethers = 10;
 
@@ -30,7 +30,7 @@ public class Tether : MonoBehaviour
         player2.connectedBody = previousTether;
         SpriteRenderer sr = previousTether.GetComponent<SpriteRenderer>();
         sr.enabled = false;
-    }
+    }*/
 
 
 }
