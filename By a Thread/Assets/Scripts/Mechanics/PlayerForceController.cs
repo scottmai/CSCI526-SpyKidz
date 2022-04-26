@@ -49,6 +49,7 @@ public class PlayerForceController : MonoBehaviour
                 move.x = player1Input.getHorizontalAxis();
                 if (move.x > 0 || move.x < 0)
                 {
+                    animator.ResetTrigger("run-idle");
                     if (move.x > 0)
                     {
                         charScale.x = -0.5f;
@@ -88,36 +89,26 @@ public class PlayerForceController : MonoBehaviour
                     stopJump = false;
                 }
 
-                if ((move.x > 0 || move.x < 0) && IsGrounded() && player1Input.getDown())       // sideways crawl
-                {
-                    if (move.x > 0)
-                    {
-                        charScale.x = -0.5f;
-                        animator.SetTrigger("idle-crawl");
-                    }
-                    else
-                    {
-                        charScale.x = 0.5f;
-                        animator.SetTrigger("idle-crawl");
-                    }
-                }
-
-                if (player1Input.getDown())
+                if ((player1Input.getDown() && IsGrounded()) || (player1Input.getDown() && !IsGrounded()))
                 {
                     body.bodyType = RigidbodyType2D.Static;
+                    animator.ResetTrigger("jump-idle");
+                    animator.ResetTrigger("duck-idle");
+                    animator.SetTrigger("idle-duck");
                 }
 
                 if (player1Input.getUp())
                 {
                     body.bodyType = RigidbodyType2D.Dynamic;
-                    animator.ResetTrigger("idle-crawl");
-                    animator.SetTrigger("crawl-idle");
+                    animator.ResetTrigger("idle-duck");
+                    animator.SetTrigger("duck-idle");
                 }
             }
             else
             {
                 move.x = player2Input.getHorizontalAxis();
                 if (move.x > 0 || move.x < 0) {
+                    animator.ResetTrigger("run-idle");
                     if (move.x > 0)
                     {
                         charScale.x = -0.5f;
@@ -128,8 +119,7 @@ public class PlayerForceController : MonoBehaviour
                         charScale.x = 0.5f;
                         animator.SetTrigger("idle-run");
                     }
-                }
-                    
+                }         
                 else
                 {
                     animator.ResetTrigger("idle-run");
@@ -158,30 +148,20 @@ public class PlayerForceController : MonoBehaviour
                     stopJump = false;
                 }
 
-                if ((move.x > 0 || move.x < 0) && IsGrounded() && player2Input.getDown())       // sideways crawl
-                {
-                    if (move.x > 0)
-                    {
-                        charScale.x = -0.5f;
-                        animator.SetTrigger("idle-crawl");
-                    }
-                    else
-                    {
-                        charScale.x = 0.5f;
-                        animator.SetTrigger("idle-crawl");
-                    }
-                }
-
-                if (player2Input.getDown())
+                if ((player2Input.getDown() && IsGrounded()) || (player2Input.getDown() && !IsGrounded()))
                 {
                     body.bodyType = RigidbodyType2D.Static;
+                    animator.ResetTrigger("jump-idle");
+                    animator.ResetTrigger("duck-idle");
+                    animator.SetTrigger("idle-duck");
+
                 }
 
                 if (player2Input.getUp())
                 {
                     body.bodyType = RigidbodyType2D.Dynamic;
-                    animator.ResetTrigger("idle-crawl");
-                    animator.SetTrigger("crawl-idle");
+                    animator.ResetTrigger("idle-duck");
+                    animator.SetTrigger("duck-idle");
                 }
             }
         }
