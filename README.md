@@ -1,5 +1,8 @@
 # By A Thread
 
+Video demo:
+https://drive.google.com/file/d/14JqeNIaUQnxYYDTqboNXvvf25La4JBvv/view?t=102
+
 CSCI 526 Project
 
 NOTE: uses Unity Version 2020.3.26f1
